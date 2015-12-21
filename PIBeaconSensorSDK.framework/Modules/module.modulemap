@@ -1,0 +1,6 @@
+framework module PIBeaconSensorSDK {
+  umbrella header "PIBeaconSensorSDK.h"
+
+  export *
+  module * { export * }
+}

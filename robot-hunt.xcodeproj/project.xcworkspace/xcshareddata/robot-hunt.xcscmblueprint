@@ -1,0 +1,29 @@
+{
+  "DVTSourceControlWorkspaceBlueprintWorkingCopyRepositoryLocationsKey" : {
+
+  },
+  "DVTSourceControlWorkspaceBlueprintWorkingCopyStatesKey" : {
+    "6CCB585858000804BB16202076224C1AB1B84311" : 0,
+    "9C70A85BF20E828CEFF9CE7C74426F50119D6E13" : 0
+  },
+  "DVTSourceControlWorkspaceBlueprintIdentifierKey" : "3DE2A409-25AC-46C8-8AC3-C552FD3ED59C",
+  "DVTSourceControlWorkspaceBlueprintWorkingCopyPathsKey" : {
+    "6CCB585858000804BB16202076224C1AB1B84311" : "iOS-SDK\/",
+    "9C70A85BF20E828CEFF9CE7C74426F50119D6E13" : "speech-ios-sdk\/"
+  },
+  "DVTSourceControlWorkspaceBlueprintNameKey" : "robot-hunt",
+  "DVTSourceControlWorkspaceBlueprintVersion" : 204,
+  "DVTSourceControlWorkspaceBlueprintRelativePathToProjectKey" : "robot-hunt.xcodeproj",
+  "DVTSourceControlWorkspaceBlueprintRemoteRepositoriesKey" : [
+    {
+      "DVTSourceControlWorkspaceBlueprintRemoteRepositoryURLKey" : "https:\/\/github.com\/Estimote\/iOS-SDK.git",
+      "DVTSourceControlWorkspaceBlueprintRemoteRepositorySystemKey" : "com.apple.dt.Xcode.sourcecontrol.Git",
+      "DVTSourceControlWorkspaceBlueprintRemoteRepositoryIdentifierKey" : "6CCB585858000804BB16202076224C1AB1B84311"
+    },
+    {
+      "DVTSourceControlWorkspaceBlueprintRemoteRepositoryURLKey" : "https:\/\/github.com\/watson-developer-cloud\/speech-ios-sdk.git",
+      "DVTSourceControlWorkspaceBlueprintRemoteRepositorySystemKey" : "com.apple.dt.Xcode.sourcecontrol.Git",
+      "DVTSourceControlWorkspaceBlueprintRemoteRepositoryIdentifierKey" : "9C70A85BF20E828CEFF9CE7C74426F50119D6E13"
+    }
+  ]
+}

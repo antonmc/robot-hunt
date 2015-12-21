@@ -1,0 +1,44 @@
+{
+  "DVTSourceControlWorkspaceBlueprintPrimaryRemoteRepositoryKey" : "13D4825399FD663CEF35EBDD316B5966E776AFAA",
+  "DVTSourceControlWorkspaceBlueprintWorkingCopyRepositoryLocationsKey" : {
+
+  },
+  "DVTSourceControlWorkspaceBlueprintWorkingCopyStatesKey" : {
+    "6CCB585858000804BB16202076224C1AB1B84311" : 0,
+    "13D4825399FD663CEF35EBDD316B5966E776AFAA" : 0,
+    "9C70A85BF20E828CEFF9CE7C74426F50119D6E13" : 0,
+    "6543FA08C237D8D8B496BA58175BE804A6A827A7" : 0
+  },
+  "DVTSourceControlWorkspaceBlueprintIdentifierKey" : "84DAF8A9-D4F6-41A3-9B28-8D53F0EE5017",
+  "DVTSourceControlWorkspaceBlueprintWorkingCopyPathsKey" : {
+    "6CCB585858000804BB16202076224C1AB1B84311" : "iOS-SDK\/",
+    "13D4825399FD663CEF35EBDD316B5966E776AFAA" : "robotclient\/",
+    "9C70A85BF20E828CEFF9CE7C74426F50119D6E13" : "speech-ios-sdk\/",
+    "6543FA08C237D8D8B496BA58175BE804A6A827A7" : "PulsingHalo\/"
+  },
+  "DVTSourceControlWorkspaceBlueprintNameKey" : "perception",
+  "DVTSourceControlWorkspaceBlueprintVersion" : 204,
+  "DVTSourceControlWorkspaceBlueprintRelativePathToProjectKey" : "perception.xcodeproj",
+  "DVTSourceControlWorkspaceBlueprintRemoteRepositoriesKey" : [
+    {
+      "DVTSourceControlWorkspaceBlueprintRemoteRepositoryURLKey" : "https:\/\/github.com\/antonmc\/robotclient.git",
+      "DVTSourceControlWorkspaceBlueprintRemoteRepositorySystemKey" : "com.apple.dt.Xcode.sourcecontrol.Git",
+      "DVTSourceControlWorkspaceBlueprintRemoteRepositoryIdentifierKey" : "13D4825399FD663CEF35EBDD316B5966E776AFAA"
+    },
+    {
+      "DVTSourceControlWorkspaceBlueprintRemoteRepositoryURLKey" : "https:\/\/github.com\/shu223\/PulsingHalo.git",
+      "DVTSourceControlWorkspaceBlueprintRemoteRepositorySystemKey" : "com.apple.dt.Xcode.sourcecontrol.Git",
+      "DVTSourceControlWorkspaceBlueprintRemoteRepositoryIdentifierKey" : "6543FA08C237D8D8B496BA58175BE804A6A827A7"
+    },
+    {
+      "DVTSourceControlWorkspaceBlueprintRemoteRepositoryURLKey" : "https:\/\/github.com\/Estimote\/iOS-SDK.git",
+      "DVTSourceControlWorkspaceBlueprintRemoteRepositorySystemKey" : "com.apple.dt.Xcode.sourcecontrol.Git",
+      "DVTSourceControlWorkspaceBlueprintRemoteRepositoryIdentifierKey" : "6CCB585858000804BB16202076224C1AB1B84311"
+    },
+    {
+      "DVTSourceControlWorkspaceBlueprintRemoteRepositoryURLKey" : "https:\/\/github.com\/watson-developer-cloud\/speech-ios-sdk.git",
+      "DVTSourceControlWorkspaceBlueprintRemoteRepositorySystemKey" : "com.apple.dt.Xcode.sourcecontrol.Git",
+      "DVTSourceControlWorkspaceBlueprintRemoteRepositoryIdentifierKey" : "9C70A85BF20E828CEFF9CE7C74426F50119D6E13"
+    }
+  ]
+}

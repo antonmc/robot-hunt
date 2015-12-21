@@ -1,0 +1,415 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Tokens version="1.0">
+	<File path="Classes/PIAdapter.html">
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/cl/PIAdapter</TokenIdentifier>
+			<Abstract type="html">Provides a set of helper functions for the management server REST API.</Abstract>
+			<DeclaredIn>PIAdapter.h</DeclaredIn>
+            
+			
+			<NodeRef refid="1"/>
+		</Token>
+		
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/instm/PIAdapter/initWithTenantCode:andOrgCode:withUsername:andPassword:</TokenIdentifier>
+			<Abstract type="html">Creates a PIAdapter and initializes it with the given tenant and organization codes.</Abstract>
+			<DeclaredIn>PIAdapter.h</DeclaredIn>
+			
+			<Declaration>- (instancetype)initWithTenantCode:(NSString *)tenantCode andOrgCode:(NSString *)orgCode withUsername:(NSString *)username andPassword:(NSString *)password</Declaration>
+			<Parameters>
+				<Parameter>
+					<Name>tenantCode</Name>
+					<Abstract type="html">The code associated with your tenant acccount.</Abstract>
+				</Parameter><Parameter>
+					<Name>orgCode</Name>
+					<Abstract type="html">The code associated with your organization account.</Abstract>
+				</Parameter><Parameter>
+					<Name>username</Name>
+					<Abstract type="html">The username used in beacon notifications</Abstract>
+				</Parameter><Parameter>
+					<Name>password</Name>
+					<Abstract type="html">The password used in beacon notifications</Abstract>
+				</Parameter>
+			</Parameters>
+			<ReturnValue><Abstract type="html">BFTask that will resolve if successfully connected to the server.</Abstract></ReturnValue>
+			<Anchor>//api/name/initWithTenantCode:andOrgCode:withUsername:andPassword:</Anchor>
+            <NodeRef refid="1"/>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/clm/PIAdapter/adapterWithTenantCode:andOrgCode:withUsername:andPassword:</TokenIdentifier>
+			<Abstract type="html">Creates a PIAdapter and initializes it with the given tenant and organization codes.</Abstract>
+			<DeclaredIn>PIAdapter.h</DeclaredIn>
+			
+			<Declaration>+ (instancetype)adapterWithTenantCode:(NSString *)tenantCode andOrgCode:(NSString *)orgCode withUsername:(NSString *)username andPassword:(NSString *)password</Declaration>
+			<Parameters>
+				<Parameter>
+					<Name>tenantCode</Name>
+					<Abstract type="html">The code associated with your tenant acccount.</Abstract>
+				</Parameter><Parameter>
+					<Name>orgCode</Name>
+					<Abstract type="html">The code associated with your organization account.</Abstract>
+				</Parameter><Parameter>
+					<Name>username</Name>
+					<Abstract type="html">The username used in beacon notifications</Abstract>
+				</Parameter><Parameter>
+					<Name>password</Name>
+					<Abstract type="html">The password used in beacon notifications</Abstract>
+				</Parameter>
+			</Parameters>
+			<ReturnValue><Abstract type="html">BFTask that will resolve if successfully connected to the server.</Abstract></ReturnValue>
+			<Anchor>//api/name/adapterWithTenantCode:andOrgCode:withUsername:andPassword:</Anchor>
+            <NodeRef refid="1"/>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/instm/PIAdapter/notifyRangedBeaconData:</TokenIdentifier>
+			<Abstract type="html">Sends the given beaconData to the PI server</Abstract>
+			<DeclaredIn>PIAdapter.h</DeclaredIn>
+			
+			<Declaration>- (BFTask *)notifyRangedBeaconData:(NSArray *)beaconData</Declaration>
+			<Parameters>
+				<Parameter>
+					<Name>beaconData</Name>
+					<Abstract type="html">An array of PIRangedBeaconData objects.</Abstract>
+				</Parameter>
+			</Parameters>
+			<ReturnValue><Abstract type="html">BFTask that will resolve if the server accepts the beacon data.</Abstract></ReturnValue>
+			<Anchor>//api/name/notifyRangedBeaconData:</Anchor>
+            <NodeRef refid="1"/>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/instm/PIAdapter/testConfigServer</TokenIdentifier>
+			<Abstract type="html">Tests to ensure it can communicate with the config server.</Abstract>
+			<DeclaredIn>PIAdapter.h</DeclaredIn>
+			
+			<Declaration>- (BFTask *)testConfigServer</Declaration>
+			
+			<ReturnValue><Abstract type="html">BFTask that will resolve if the server responds successfully.</Abstract></ReturnValue>
+			<Anchor>//api/name/testConfigServer</Anchor>
+            <NodeRef refid="1"/>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/instm/PIAdapter/retrieveProximityUUIDs</TokenIdentifier>
+			<Abstract type="html">Retrieves the proximity UUIDs associated with this tenant and organization.</Abstract>
+			<DeclaredIn>PIAdapter.h</DeclaredIn>
+			
+			<Declaration>- (BFTask *)retrieveProximityUUIDs</Declaration>
+			
+			<ReturnValue><Abstract type="html">BFTask that will resolve on an NSArray of proximity UUID strings.</Abstract></ReturnValue>
+			<Anchor>//api/name/retrieveProximityUUIDs</Anchor>
+            <NodeRef refid="1"/>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/instm/PIAdapter/registerDevice:</TokenIdentifier>
+			<Abstract type="html">Registers the given device for this tenant and organization, using the descriptor as the identifier.</Abstract>
+			<DeclaredIn>PIAdapter.h</DeclaredIn>
+			
+			<Declaration>- (BFTask *)registerDevice:(PIDeviceInfo *)deviceInfo</Declaration>
+			<Parameters>
+				<Parameter>
+					<Name>deviceInfo</Name>
+					<Abstract type="html">The deviceInfo you wish to use to register this device. Note: The isRegistered field will be set to true</Abstract>
+				</Parameter>
+			</Parameters>
+			<ReturnValue><Abstract type="html">BFTask that will resolve if the server responds successfully.</Abstract></ReturnValue>
+			<Anchor>//api/name/registerDevice:</Anchor>
+            <NodeRef refid="1"/>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/instm/PIAdapter/unregisterDevice:</TokenIdentifier>
+			<Abstract type="html">Unregisters the given device for this tenant and organization, using the descriptor as the identifier.</Abstract>
+			<DeclaredIn>PIAdapter.h</DeclaredIn>
+			
+			<Declaration>- (BFTask *)unregisterDevice:(PIDeviceInfo *)deviceInfo</Declaration>
+			<Parameters>
+				<Parameter>
+					<Name>deviceInfo</Name>
+					<Abstract type="html">The deviceInfo you wish to use to unregister this device. Note: The isRegistered field will be set to false</Abstract>
+				</Parameter>
+			</Parameters>
+			<ReturnValue><Abstract type="html">BFTask that will resolve if the server responds successfully.</Abstract></ReturnValue>
+			<Anchor>//api/name/unregisterDevice:</Anchor>
+            <NodeRef refid="1"/>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/instm/PIAdapter/getFloorMapForSite:andFloor:</TokenIdentifier>
+			<Abstract type="html">Retrieves the map associated with the given site and floor.</Abstract>
+			<DeclaredIn>PIAdapter.h</DeclaredIn>
+			
+			<Declaration>- (BFTask *)getFloorMapForSite:(NSString *)siteCode andFloor:(NSString *)floorCode</Declaration>
+			<Parameters>
+				<Parameter>
+					<Name>siteCode</Name>
+					<Abstract type="html">The siteCode associated with this map.</Abstract>
+				</Parameter><Parameter>
+					<Name>floorCode</Name>
+					<Abstract type="html">The floorCode associated with this map.</Abstract>
+				</Parameter>
+			</Parameters>
+			<ReturnValue><Abstract type="html">BFTask that will resolve if the server responds successfully.</Abstract></ReturnValue>
+			<Anchor>//api/name/getFloorMapForSite:andFloor:</Anchor>
+            <NodeRef refid="1"/>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/instm/PIAdapter/getBeacon:atSite:andFloor:</TokenIdentifier>
+			<Abstract type="html">Retrieves configuration information for the given beacon.</Abstract>
+			<DeclaredIn>PIAdapter.h</DeclaredIn>
+			
+			<Declaration>- (BFTask *)getBeacon:(NSString *)beaconCode atSite:(NSString *)siteCode andFloor:(NSString *)floorCode</Declaration>
+			<Parameters>
+				<Parameter>
+					<Name>beaconCode</Name>
+					<Abstract type="html">The beaconCode associated with this beacon.</Abstract>
+				</Parameter><Parameter>
+					<Name>siteCode</Name>
+					<Abstract type="html">The siteCode associated with this beacon.</Abstract>
+				</Parameter><Parameter>
+					<Name>floorCode</Name>
+					<Abstract type="html">The floorCode associated with this beacon.</Abstract>
+				</Parameter>
+			</Parameters>
+			<ReturnValue><Abstract type="html">BFTask that will resolve if the server responds successfully.</Abstract></ReturnValue>
+			<Anchor>//api/name/getBeacon:atSite:andFloor:</Anchor>
+            <NodeRef refid="1"/>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/instm/PIAdapter/getAllBeaconsAtSite:andFloor:</TokenIdentifier>
+			<Abstract type="html">Retrieves configuration information for the given site and floor.</Abstract>
+			<DeclaredIn>PIAdapter.h</DeclaredIn>
+			
+			<Declaration>- (BFTask *)getAllBeaconsAtSite:(NSString *)siteCode andFloor:(NSString *)floorCode</Declaration>
+			<Parameters>
+				<Parameter>
+					<Name>siteCode</Name>
+					<Abstract type="html">The siteCode</Abstract>
+				</Parameter><Parameter>
+					<Name>floorCode</Name>
+					<Abstract type="html">The floorCode</Abstract>
+				</Parameter>
+			</Parameters>
+			<ReturnValue><Abstract type="html">BFTask that will resolve if the server responds successfully.</Abstract></ReturnValue>
+			<Anchor>//api/name/getAllBeaconsAtSite:andFloor:</Anchor>
+            <NodeRef refid="1"/>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/instm/PIAdapter/getDevice:</TokenIdentifier>
+			<Abstract type="html">Retrieves configuration information for the given device.</Abstract>
+			<DeclaredIn>PIAdapter.h</DeclaredIn>
+			
+			<Declaration>- (BFTask *)getDevice:(NSString *)deviceCode</Declaration>
+			<Parameters>
+				<Parameter>
+					<Name>deviceCode</Name>
+					<Abstract type="html">The deviceCode</Abstract>
+				</Parameter>
+			</Parameters>
+			<ReturnValue><Abstract type="html">BFTask that will resolve if the server responds successfully.</Abstract></ReturnValue>
+			<Anchor>//api/name/getDevice:</Anchor>
+            <NodeRef refid="1"/>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/instm/PIAdapter/getFloor:atSite:</TokenIdentifier>
+			<Abstract type="html">Retrieves configuration information for the given floor and site.</Abstract>
+			<DeclaredIn>PIAdapter.h</DeclaredIn>
+			
+			<Declaration>- (BFTask *)getFloor:(NSString *)floorCode atSite:(NSString *)siteCode</Declaration>
+			<Parameters>
+				<Parameter>
+					<Name>floorCode</Name>
+					<Abstract type="html">The floorCode</Abstract>
+				</Parameter><Parameter>
+					<Name>siteCode</Name>
+					<Abstract type="html">The siteCode</Abstract>
+				</Parameter>
+			</Parameters>
+			<ReturnValue><Abstract type="html">BFTask that will resolve if the server responds successfully.</Abstract></ReturnValue>
+			<Anchor>//api/name/getFloor:atSite:</Anchor>
+            <NodeRef refid="1"/>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/instm/PIAdapter/getAllFloorsForSite:</TokenIdentifier>
+			<Abstract type="html">Retrieves configuration information for all floors at the given site.</Abstract>
+			<DeclaredIn>PIAdapter.h</DeclaredIn>
+			
+			<Declaration>- (BFTask *)getAllFloorsForSite:(NSString *)siteCode</Declaration>
+			<Parameters>
+				<Parameter>
+					<Name>siteCode</Name>
+					<Abstract type="html">The siteCode</Abstract>
+				</Parameter>
+			</Parameters>
+			<ReturnValue><Abstract type="html">BFTask that will resolve if the server responds successfully.</Abstract></ReturnValue>
+			<Anchor>//api/name/getAllFloorsForSite:</Anchor>
+            <NodeRef refid="1"/>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/instm/PIAdapter/getOrg</TokenIdentifier>
+			<Abstract type="html">Retrieves configuration information for the org associated with this adapter.</Abstract>
+			<DeclaredIn>PIAdapter.h</DeclaredIn>
+			
+			<Declaration>- (BFTask *)getOrg</Declaration>
+			
+			<ReturnValue><Abstract type="html">BFTask that will resolve if the server responds successfully.</Abstract></ReturnValue>
+			<Anchor>//api/name/getOrg</Anchor>
+            <NodeRef refid="1"/>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/instm/PIAdapter/getAllOrgs</TokenIdentifier>
+			<Abstract type="html">Retrieves configuration information for all organizations under the tenant
+associate with this adapter.</Abstract>
+			<DeclaredIn>PIAdapter.h</DeclaredIn>
+			
+			<Declaration>- (BFTask *)getAllOrgs</Declaration>
+			
+			<ReturnValue><Abstract type="html">BFTask that will resolve if the server responds successfully.</Abstract></ReturnValue>
+			<Anchor>//api/name/getAllOrgs</Anchor>
+            <NodeRef refid="1"/>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/instm/PIAdapter/getSensor:atSite:andFloor:</TokenIdentifier>
+			<Abstract type="html">Retrieves configuration information for the specified sensor</Abstract>
+			<DeclaredIn>PIAdapter.h</DeclaredIn>
+			
+			<Declaration>- (BFTask *)getSensor:(NSString *)sensorCode atSite:(NSString *)siteCode andFloor:(NSString *)floorCode</Declaration>
+			<Parameters>
+				<Parameter>
+					<Name>sensorCode</Name>
+					<Abstract type="html">The sensorCode</Abstract>
+				</Parameter><Parameter>
+					<Name>siteCode</Name>
+					<Abstract type="html">The siteCode</Abstract>
+				</Parameter><Parameter>
+					<Name>floorCode</Name>
+					<Abstract type="html">The floorCode</Abstract>
+				</Parameter>
+			</Parameters>
+			<ReturnValue><Abstract type="html">BFTask that will resolve if the server responds successfully.</Abstract></ReturnValue>
+			<Anchor>//api/name/getSensor:atSite:andFloor:</Anchor>
+            <NodeRef refid="1"/>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/instm/PIAdapter/getAllSensorsAtSite:andFloor:</TokenIdentifier>
+			<Abstract type="html">Retrieves all sensors for on the given floor.</Abstract>
+			<DeclaredIn>PIAdapter.h</DeclaredIn>
+			
+			<Declaration>- (BFTask *)getAllSensorsAtSite:(NSString *)siteCode andFloor:(NSString *)floorCode</Declaration>
+			<Parameters>
+				<Parameter>
+					<Name>siteCode</Name>
+					<Abstract type="html">The siteCode</Abstract>
+				</Parameter><Parameter>
+					<Name>floorCode</Name>
+					<Abstract type="html">The floorCode</Abstract>
+				</Parameter>
+			</Parameters>
+			<ReturnValue><Abstract type="html">BFTask that will resolve if the server responds successfully.</Abstract></ReturnValue>
+			<Anchor>//api/name/getAllSensorsAtSite:andFloor:</Anchor>
+            <NodeRef refid="1"/>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/instm/PIAdapter/getSite:</TokenIdentifier>
+			<Abstract type="html">Retrieves configuration information for the given site.</Abstract>
+			<DeclaredIn>PIAdapter.h</DeclaredIn>
+			
+			<Declaration>- (BFTask *)getSite:(NSString *)siteCode</Declaration>
+			<Parameters>
+				<Parameter>
+					<Name>siteCode</Name>
+					<Abstract type="html">The siteCode</Abstract>
+				</Parameter>
+			</Parameters>
+			<ReturnValue><Abstract type="html">BFTask that will resolve if the server responds successfully.</Abstract></ReturnValue>
+			<Anchor>//api/name/getSite:</Anchor>
+            <NodeRef refid="1"/>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/instm/PIAdapter/getAllSites</TokenIdentifier>
+			<Abstract type="html">Retrieves configuration information for all sites associated with tenant
+and organization associated with this</Abstract>
+			<DeclaredIn>PIAdapter.h</DeclaredIn>
+			
+			<Declaration>- (BFTask *)getAllSites</Declaration>
+			
+			<ReturnValue><Abstract type="html">BFTask that will resolve if the server responds successfully.</Abstract></ReturnValue>
+			<Anchor>//api/name/getAllSites</Anchor>
+            <NodeRef refid="1"/>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/instm/PIAdapter/getTenant</TokenIdentifier>
+			<Abstract type="html">Retrieves the configuration information for the tenant associated with this
+adapter.</Abstract>
+			<DeclaredIn>PIAdapter.h</DeclaredIn>
+			
+			<Declaration>- (BFTask *)getTenant</Declaration>
+			
+			<ReturnValue><Abstract type="html">BFTask that will resolve if the server responds successfully.</Abstract></ReturnValue>
+			<Anchor>//api/name/getTenant</Anchor>
+            <NodeRef refid="1"/>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/instm/PIAdapter/getZone:atSite:andFloor:</TokenIdentifier>
+			<Abstract type="html">Retrieves the configuration information for the given zone.</Abstract>
+			<DeclaredIn>PIAdapter.h</DeclaredIn>
+			
+			<Declaration>- (BFTask *)getZone:(NSString *)zoneCode atSite:(NSString *)siteCode andFloor:(NSString *)floorCode</Declaration>
+			<Parameters>
+				<Parameter>
+					<Name>zoneCode</Name>
+					<Abstract type="html">the zoneCode</Abstract>
+				</Parameter><Parameter>
+					<Name>siteCode</Name>
+					<Abstract type="html">The siteCode</Abstract>
+				</Parameter><Parameter>
+					<Name>floorCode</Name>
+					<Abstract type="html">The floorCode</Abstract>
+				</Parameter>
+			</Parameters>
+			<ReturnValue><Abstract type="html">BFTask that will resolve if the server responds successfully.</Abstract></ReturnValue>
+			<Anchor>//api/name/getZone:atSite:andFloor:</Anchor>
+            <NodeRef refid="1"/>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/instm/PIAdapter/getAllZonesAtSite:andFloor:</TokenIdentifier>
+			<Abstract type="html">Retrieves all zones on the given floor.</Abstract>
+			<DeclaredIn>PIAdapter.h</DeclaredIn>
+			
+			<Declaration>- (BFTask *)getAllZonesAtSite:(NSString *)siteCode andFloor:(NSString *)floorCode</Declaration>
+			<Parameters>
+				<Parameter>
+					<Name>siteCode</Name>
+					<Abstract type="html">The siteCode</Abstract>
+				</Parameter><Parameter>
+					<Name>floorCode</Name>
+					<Abstract type="html">The floorCode</Abstract>
+				</Parameter>
+			</Parameters>
+			<ReturnValue><Abstract type="html">BFTask that will resolve if the server responds successfully.</Abstract></ReturnValue>
+			<Anchor>//api/name/getAllZonesAtSite:andFloor:</Anchor>
+            <NodeRef refid="1"/>
+		</Token>
+		
+        
+	</File>
+</Tokens>

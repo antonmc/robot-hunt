@@ -1,0 +1,243 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Tokens version="1.0">
+	<File path="Classes/PIDeviceInfo.html">
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/cl/PIDeviceInfo</TokenIdentifier>
+			<Abstract type="html">Encapsulates the information that defines an device as reported to the PI server. The descriptor
+is used to uniquely identify this device.</Abstract>
+			<DeclaredIn>PIDeviceInfo.h</DeclaredIn>
+            
+			
+			<NodeRef refid="3"/>
+		</Token>
+		
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/instm/PIDeviceInfo/initWithDescriptor:andName:andType:</TokenIdentifier>
+			<Abstract type="html">Initializes the device with the given descriptor, name, and type</Abstract>
+			<DeclaredIn>PIDeviceInfo.h</DeclaredIn>
+			
+			<Declaration>- (instancetype)initWithDescriptor:(NSString *)descriptor andName:(NSString *)name andType:(NSString *)type</Declaration>
+			<Parameters>
+				<Parameter>
+					<Name>descriptor</Name>
+					<Abstract type="html">- An identifier that is unique to this device</Abstract>
+				</Parameter><Parameter>
+					<Name>name</Name>
+					<Abstract type="html">- Name of the device being registered</Abstract>
+				</Parameter><Parameter>
+					<Name>type</Name>
+					<Abstract type="html">- The type of device. By default &quot;Internal&quot; and &quot;External&quot; types are supported, but this
+can be customized through the management console.</Abstract>
+				</Parameter>
+			</Parameters>
+			
+			<Anchor>//api/name/initWithDescriptor:andName:andType:</Anchor>
+            <NodeRef refid="3"/>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/instm/PIDeviceInfo/initWithName:</TokenIdentifier>
+			<Abstract type="html">Initializes the device with the given name using the deviceID as the descriptor and &quot;External&quot; as the type.
+By default the UUID of the device is used.</Abstract>
+			<DeclaredIn>PIDeviceInfo.h</DeclaredIn>
+			
+			<Declaration>- (instancetype)initWithName:(NSString *)name</Declaration>
+			<Parameters>
+				<Parameter>
+					<Name>name</Name>
+					<Abstract type="html">- Name of the device being registered</Abstract>
+				</Parameter>
+			</Parameters>
+			
+			<Anchor>//api/name/initWithName:</Anchor>
+            <NodeRef refid="3"/>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/instm/PIDeviceInfo/setDescriptor:</TokenIdentifier>
+			<Abstract type="html">Converts the DeviceInfo into the appropriate JSON format expected by the PI server</Abstract>
+			<DeclaredIn>PIDeviceInfo.h</DeclaredIn>
+			
+			<Declaration>@property NSString *descriptor</Declaration>
+			
+			
+			<Anchor>//api/name/descriptor</Anchor>
+            <NodeRef refid="3"/>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/instm/PIDeviceInfo/descriptor</TokenIdentifier>
+			<Abstract type="html">Converts the DeviceInfo into the appropriate JSON format expected by the PI server</Abstract>
+			<DeclaredIn>PIDeviceInfo.h</DeclaredIn>
+			
+			<Declaration>@property NSString *descriptor</Declaration>
+			
+			
+			<Anchor>//api/name/descriptor</Anchor>
+            <NodeRef refid="3"/>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/instp/PIDeviceInfo/descriptor</TokenIdentifier>
+			<Abstract type="html">Converts the DeviceInfo into the appropriate JSON format expected by the PI server</Abstract>
+			<DeclaredIn>PIDeviceInfo.h</DeclaredIn>
+			
+			<Declaration>@property NSString *descriptor</Declaration>
+			
+			
+			<Anchor>//api/name/descriptor</Anchor>
+            <NodeRef refid="3"/>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/instm/PIDeviceInfo/setType:</TokenIdentifier>
+			<Abstract type="html">* The device type, as specified in the configuration console. By default the types allowed are
+&quot;Internal&quot; and &quot;External&quot;</Abstract>
+			<DeclaredIn>PIDeviceInfo.h</DeclaredIn>
+			
+			<Declaration>@property NSString *type</Declaration>
+			
+			
+			<Anchor>//api/name/type</Anchor>
+            <NodeRef refid="3"/>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/instm/PIDeviceInfo/type</TokenIdentifier>
+			<Abstract type="html">* The device type, as specified in the configuration console. By default the types allowed are
+&quot;Internal&quot; and &quot;External&quot;</Abstract>
+			<DeclaredIn>PIDeviceInfo.h</DeclaredIn>
+			
+			<Declaration>@property NSString *type</Declaration>
+			
+			
+			<Anchor>//api/name/type</Anchor>
+            <NodeRef refid="3"/>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/instp/PIDeviceInfo/type</TokenIdentifier>
+			<Abstract type="html">* The device type, as specified in the configuration console. By default the types allowed are
+&quot;Internal&quot; and &quot;External&quot;</Abstract>
+			<DeclaredIn>PIDeviceInfo.h</DeclaredIn>
+			
+			<Declaration>@property NSString *type</Declaration>
+			
+			
+			<Anchor>//api/name/type</Anchor>
+            <NodeRef refid="3"/>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/instm/PIDeviceInfo/setMetadata:</TokenIdentifier>
+			<Abstract type="html">A dictionary of additional meta data that can be associated with this device.</Abstract>
+			<DeclaredIn>PIDeviceInfo.h</DeclaredIn>
+			
+			<Declaration>@property NSDictionary *metadata</Declaration>
+			
+			
+			<Anchor>//api/name/metadata</Anchor>
+            <NodeRef refid="3"/>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/instm/PIDeviceInfo/metadata</TokenIdentifier>
+			<Abstract type="html">A dictionary of additional meta data that can be associated with this device.</Abstract>
+			<DeclaredIn>PIDeviceInfo.h</DeclaredIn>
+			
+			<Declaration>@property NSDictionary *metadata</Declaration>
+			
+			
+			<Anchor>//api/name/metadata</Anchor>
+            <NodeRef refid="3"/>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/instp/PIDeviceInfo/metadata</TokenIdentifier>
+			<Abstract type="html">A dictionary of additional meta data that can be associated with this device.</Abstract>
+			<DeclaredIn>PIDeviceInfo.h</DeclaredIn>
+			
+			<Declaration>@property NSDictionary *metadata</Declaration>
+			
+			
+			<Anchor>//api/name/metadata</Anchor>
+            <NodeRef refid="3"/>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/instm/PIDeviceInfo/setIsRegistered:</TokenIdentifier>
+			<Abstract type="html">Description of the</Abstract>
+			<DeclaredIn>PIDeviceInfo.h</DeclaredIn>
+			
+			<Declaration>@property BOOL isRegistered</Declaration>
+			
+			
+			<Anchor>//api/name/isRegistered</Anchor>
+            <NodeRef refid="3"/>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/instm/PIDeviceInfo/isRegistered</TokenIdentifier>
+			<Abstract type="html">Description of the</Abstract>
+			<DeclaredIn>PIDeviceInfo.h</DeclaredIn>
+			
+			<Declaration>@property BOOL isRegistered</Declaration>
+			
+			
+			<Anchor>//api/name/isRegistered</Anchor>
+            <NodeRef refid="3"/>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/instp/PIDeviceInfo/isRegistered</TokenIdentifier>
+			<Abstract type="html">Description of the</Abstract>
+			<DeclaredIn>PIDeviceInfo.h</DeclaredIn>
+			
+			<Declaration>@property BOOL isRegistered</Declaration>
+			
+			
+			<Anchor>//api/name/isRegistered</Anchor>
+            <NodeRef refid="3"/>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/instm/PIDeviceInfo/setName:</TokenIdentifier>
+			<Abstract type="html">The name used to identify this device.</Abstract>
+			<DeclaredIn>PIDeviceInfo.h</DeclaredIn>
+			
+			<Declaration>@property NSString *name</Declaration>
+			
+			
+			<Anchor>//api/name/name</Anchor>
+            <NodeRef refid="3"/>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/instm/PIDeviceInfo/name</TokenIdentifier>
+			<Abstract type="html">The name used to identify this device.</Abstract>
+			<DeclaredIn>PIDeviceInfo.h</DeclaredIn>
+			
+			<Declaration>@property NSString *name</Declaration>
+			
+			
+			<Anchor>//api/name/name</Anchor>
+            <NodeRef refid="3"/>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/instp/PIDeviceInfo/name</TokenIdentifier>
+			<Abstract type="html">The name used to identify this device.</Abstract>
+			<DeclaredIn>PIDeviceInfo.h</DeclaredIn>
+			
+			<Declaration>@property NSString *name</Declaration>
+			
+			
+			<Anchor>//api/name/name</Anchor>
+            <NodeRef refid="3"/>
+		</Token>
+		
+        
+	</File>
+</Tokens>

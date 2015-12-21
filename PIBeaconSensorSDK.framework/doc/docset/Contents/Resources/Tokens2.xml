@@ -1,0 +1,151 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Tokens version="1.0">
+	<File path="Classes/PIBeaconSensor.html">
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/cl/PIBeaconSensor</TokenIdentifier>
+			<Abstract type="html">Monitors and ranges for beacons using the proximity UUIDs specified in the
+PI configuration console.</Abstract>
+			<DeclaredIn>PIBeaconSensor.h</DeclaredIn>
+            
+			
+			<NodeRef refid="2"/>
+		</Token>
+		
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/instm/PIBeaconSensor/setAdapter:</TokenIdentifier>
+			<Abstract type="html">The adapter that contains information relevant to communicate with the PI server</Abstract>
+			<DeclaredIn>PIBeaconSensor.h</DeclaredIn>
+			
+			<Declaration>@property (readonly) PIAdapter *adapter</Declaration>
+			
+			
+			<Anchor>//api/name/adapter</Anchor>
+            <NodeRef refid="2"/>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/instm/PIBeaconSensor/adapter</TokenIdentifier>
+			<Abstract type="html">The adapter that contains information relevant to communicate with the PI server</Abstract>
+			<DeclaredIn>PIBeaconSensor.h</DeclaredIn>
+			
+			<Declaration>@property (readonly) PIAdapter *adapter</Declaration>
+			
+			
+			<Anchor>//api/name/adapter</Anchor>
+            <NodeRef refid="2"/>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/instp/PIBeaconSensor/adapter</TokenIdentifier>
+			<Abstract type="html">The adapter that contains information relevant to communicate with the PI server</Abstract>
+			<DeclaredIn>PIBeaconSensor.h</DeclaredIn>
+			
+			<Declaration>@property (readonly) PIAdapter *adapter</Declaration>
+			
+			
+			<Anchor>//api/name/adapter</Anchor>
+            <NodeRef refid="2"/>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/instm/PIBeaconSensor/setDelegate:</TokenIdentifier>
+			<Abstract type="html">The delegate that, when specified, will be notified on various beacon events.</Abstract>
+			<DeclaredIn>PIBeaconSensor.h</DeclaredIn>
+			
+			<Declaration>@property id&lt;PIBeaconSensorDelegate&gt; delegate</Declaration>
+			
+			
+			<Anchor>//api/name/delegate</Anchor>
+            <NodeRef refid="2"/>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/instm/PIBeaconSensor/delegate</TokenIdentifier>
+			<Abstract type="html">The delegate that, when specified, will be notified on various beacon events.</Abstract>
+			<DeclaredIn>PIBeaconSensor.h</DeclaredIn>
+			
+			<Declaration>@property id&lt;PIBeaconSensorDelegate&gt; delegate</Declaration>
+			
+			
+			<Anchor>//api/name/delegate</Anchor>
+            <NodeRef refid="2"/>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/instp/PIBeaconSensor/delegate</TokenIdentifier>
+			<Abstract type="html">The delegate that, when specified, will be notified on various beacon events.</Abstract>
+			<DeclaredIn>PIBeaconSensor.h</DeclaredIn>
+			
+			<Declaration>@property id&lt;PIBeaconSensorDelegate&gt; delegate</Declaration>
+			
+			
+			<Anchor>//api/name/delegate</Anchor>
+            <NodeRef refid="2"/>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/clm/PIBeaconSensor/sensorWithAdapter:</TokenIdentifier>
+			<Abstract type="html">Creates a sensor with the given adapter.</Abstract>
+			<DeclaredIn>PIBeaconSensor.h</DeclaredIn>
+			
+			<Declaration>+ (instancetype)sensorWithAdapter:(PIAdapter *)adapter</Declaration>
+			<Parameters>
+				<Parameter>
+					<Name>adapter</Name>
+					<Abstract type="html">- The Adapter that handles commmunication to the PI server</Abstract>
+				</Parameter>
+			</Parameters>
+			<ReturnValue><Abstract type="html">A new PIBeaconSensor</Abstract></ReturnValue>
+			<Anchor>//api/name/sensorWithAdapter:</Anchor>
+            <NodeRef refid="2"/>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/instm/PIBeaconSensor/initWithAdapter:</TokenIdentifier>
+			<Abstract type="html">Creates a sensor with the given adapter.</Abstract>
+			<DeclaredIn>PIBeaconSensor.h</DeclaredIn>
+			
+			<Declaration>- (instancetype)initWithAdapter:(PIAdapter *)adapter</Declaration>
+			<Parameters>
+				<Parameter>
+					<Name>adapter</Name>
+					<Abstract type="html">- The Adapter that handles commmunication to the PI server</Abstract>
+				</Parameter>
+			</Parameters>
+			
+			<Anchor>//api/name/initWithAdapter:</Anchor>
+            <NodeRef refid="2"/>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/instm/PIBeaconSensor/start</TokenIdentifier>
+			<Abstract type="html">Starts monitoring for beacons using the proximity UUIDs specified in the
+PI configuration console.</Abstract>
+			<DeclaredIn>PIBeaconSensor.h</DeclaredIn>
+			
+			<Declaration>- (BFTask *)start</Declaration>
+			
+			<ReturnValue><Abstract type="html">A BFTask that resolves the task if it&apos;s able to retrieve the proximity
+UUIDs from the server, and rejects the task if there&apos;s a problem communicating
+with the server.</Abstract></ReturnValue>
+			<Anchor>//api/name/start</Anchor>
+            <NodeRef refid="2"/>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/instm/PIBeaconSensor/stop</TokenIdentifier>
+			<Abstract type="html">Stops monitoring for beacons.</Abstract>
+			<DeclaredIn>PIBeaconSensor.h</DeclaredIn>
+			
+			<Declaration>- (BFTask *)stop</Declaration>
+			
+			
+			<Anchor>//api/name/stop</Anchor>
+            <NodeRef refid="2"/>
+		</Token>
+		
+        
+	</File>
+</Tokens>

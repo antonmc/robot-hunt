@@ -1,0 +1,1642 @@
+<!DOCTYPE HTML>
+<html>
+	<head>
+		<meta http-equiv="Content-Type" content="html/html; charset=utf-8" />
+		<title>PIAdapter Class Reference</title>
+		<meta id="xcode-display" name="xcode-display" content="render"/>
+		<link rel="stylesheet" type="text/css" href="../css/styles.css" media="all" />
+		<link rel="stylesheet" type="text/css" media="print" href="../css/stylesPrint.css" />
+		<meta name="generator" content="appledoc 2.2 (build 963)" />
+	</head>
+	<body>
+		<header id="top_header">
+			<div id="library" class="hideInXcode">
+				<h1><a id="libraryTitle" href="../index.html">PIBeaconSensorSDK </a></h1>
+				<a id="developerHome" href="../index.html">IBM Mobile First - Presence Insights</a>
+			</div>
+			
+			<div id="title" role="banner">
+				<h1 class="hideInXcode">PIAdapter Class Reference</h1>
+			</div>
+			<ul id="headerButtons" role="toolbar">
+				<li id="toc_button">
+					<button aria-label="Show Table of Contents" role="checkbox" class="open" id="table_of_contents"><span class="disclosure"></span>Table of Contents</button>
+				</li>
+				<li id="jumpto_button" role="navigation">
+					<select id="jumpTo">
+	<option value="top">Jump To&#133;</option>
+	
+	<option value="overview">Overview</option>
+	
+	
+	
+	
+	<option value="tasks">Tasks</option>
+	
+	
+	
+	
+	
+	
+	
+	<option value="class_methods">Class Methods</option>
+	
+	<option value="//api/name/adapterWithTenantCode:andOrgCode:withUsername:andPassword:">&nbsp;&nbsp;&nbsp;&nbsp;+ adapterWithTenantCode:andOrgCode:withUsername:andPassword:</option>
+	
+	
+	
+	
+	<option value="instance_methods">Instance Methods</option>
+	
+	<option value="//api/name/getAllBeaconsAtSite:andFloor:">&nbsp;&nbsp;&nbsp;&nbsp;- getAllBeaconsAtSite:andFloor:</option>
+	
+	<option value="//api/name/getAllFloorsForSite:">&nbsp;&nbsp;&nbsp;&nbsp;- getAllFloorsForSite:</option>
+	
+	<option value="//api/name/getAllOrgs">&nbsp;&nbsp;&nbsp;&nbsp;- getAllOrgs</option>
+	
+	<option value="//api/name/getAllSensorsAtSite:andFloor:">&nbsp;&nbsp;&nbsp;&nbsp;- getAllSensorsAtSite:andFloor:</option>
+	
+	<option value="//api/name/getAllSites">&nbsp;&nbsp;&nbsp;&nbsp;- getAllSites</option>
+	
+	<option value="//api/name/getAllZonesAtSite:andFloor:">&nbsp;&nbsp;&nbsp;&nbsp;- getAllZonesAtSite:andFloor:</option>
+	
+	<option value="//api/name/getBeacon:atSite:andFloor:">&nbsp;&nbsp;&nbsp;&nbsp;- getBeacon:atSite:andFloor:</option>
+	
+	<option value="//api/name/getDevice:">&nbsp;&nbsp;&nbsp;&nbsp;- getDevice:</option>
+	
+	<option value="//api/name/getFloor:atSite:">&nbsp;&nbsp;&nbsp;&nbsp;- getFloor:atSite:</option>
+	
+	<option value="//api/name/getFloorMapForSite:andFloor:">&nbsp;&nbsp;&nbsp;&nbsp;- getFloorMapForSite:andFloor:</option>
+	
+	<option value="//api/name/getOrg">&nbsp;&nbsp;&nbsp;&nbsp;- getOrg</option>
+	
+	<option value="//api/name/getSensor:atSite:andFloor:">&nbsp;&nbsp;&nbsp;&nbsp;- getSensor:atSite:andFloor:</option>
+	
+	<option value="//api/name/getSite:">&nbsp;&nbsp;&nbsp;&nbsp;- getSite:</option>
+	
+	<option value="//api/name/getTenant">&nbsp;&nbsp;&nbsp;&nbsp;- getTenant</option>
+	
+	<option value="//api/name/getZone:atSite:andFloor:">&nbsp;&nbsp;&nbsp;&nbsp;- getZone:atSite:andFloor:</option>
+	
+	<option value="//api/name/initWithTenantCode:andOrgCode:withUsername:andPassword:">&nbsp;&nbsp;&nbsp;&nbsp;- initWithTenantCode:andOrgCode:withUsername:andPassword:</option>
+	
+	<option value="//api/name/notifyRangedBeaconData:">&nbsp;&nbsp;&nbsp;&nbsp;- notifyRangedBeaconData:</option>
+	
+	<option value="//api/name/registerDevice:">&nbsp;&nbsp;&nbsp;&nbsp;- registerDevice:</option>
+	
+	<option value="//api/name/retrieveProximityUUIDs">&nbsp;&nbsp;&nbsp;&nbsp;- retrieveProximityUUIDs</option>
+	
+	<option value="//api/name/testConfigServer">&nbsp;&nbsp;&nbsp;&nbsp;- testConfigServer</option>
+	
+	<option value="//api/name/unregisterDevice:">&nbsp;&nbsp;&nbsp;&nbsp;- unregisterDevice:</option>
+	
+	
+	
+</select>
+				</li>
+			</ul>
+		</header>
+		<nav id="tocContainer" class="isShowingTOC">
+			<ul id="toc" role="tree">
+				
+<li role="treeitem"><span class="nodisclosure"></span><span class="sectionName"><a href="#overview">Overview</a></span></li>
+
+
+
+
+<li role="treeitem" id="task_treeitem"><span class="nodisclosure"></span><span class="sectionName"><a href="#tasks">Tasks</a></span><ul>
+	
+</ul></li>
+
+
+
+
+
+
+
+<li role="treeitem" class="children"><span class="disclosure"></span><span class="sectionName"><a href="#class_methods">Class Methods</a></span><ul>
+	
+	<li><span class="nodisclosure"></span><span class="sectionName"><a href="#//api/name/adapterWithTenantCode:andOrgCode:withUsername:andPassword:">adapterWithTenantCode:andOrgCode:withUsername:andPassword:</a></span></li>
+	
+</ul></li>
+
+
+
+<li role="treeitem" class="children"><span class="disclosure"></span><span class="sectionName"><a href="#instance_methods">Instance Methods</a></span><ul>
+	
+	<li><span class="nodisclosure"></span><span class="sectionName"><a href="#//api/name/getAllBeaconsAtSite:andFloor:">getAllBeaconsAtSite:andFloor:</a></span></li>
+	
+	<li><span class="nodisclosure"></span><span class="sectionName"><a href="#//api/name/getAllFloorsForSite:">getAllFloorsForSite:</a></span></li>
+	
+	<li><span class="nodisclosure"></span><span class="sectionName"><a href="#//api/name/getAllOrgs">getAllOrgs</a></span></li>
+	
+	<li><span class="nodisclosure"></span><span class="sectionName"><a href="#//api/name/getAllSensorsAtSite:andFloor:">getAllSensorsAtSite:andFloor:</a></span></li>
+	
+	<li><span class="nodisclosure"></span><span class="sectionName"><a href="#//api/name/getAllSites">getAllSites</a></span></li>
+	
+	<li><span class="nodisclosure"></span><span class="sectionName"><a href="#//api/name/getAllZonesAtSite:andFloor:">getAllZonesAtSite:andFloor:</a></span></li>
+	
+	<li><span class="nodisclosure"></span><span class="sectionName"><a href="#//api/name/getBeacon:atSite:andFloor:">getBeacon:atSite:andFloor:</a></span></li>
+	
+	<li><span class="nodisclosure"></span><span class="sectionName"><a href="#//api/name/getDevice:">getDevice:</a></span></li>
+	
+	<li><span class="nodisclosure"></span><span class="sectionName"><a href="#//api/name/getFloor:atSite:">getFloor:atSite:</a></span></li>
+	
+	<li><span class="nodisclosure"></span><span class="sectionName"><a href="#//api/name/getFloorMapForSite:andFloor:">getFloorMapForSite:andFloor:</a></span></li>
+	
+	<li><span class="nodisclosure"></span><span class="sectionName"><a href="#//api/name/getOrg">getOrg</a></span></li>
+	
+	<li><span class="nodisclosure"></span><span class="sectionName"><a href="#//api/name/getSensor:atSite:andFloor:">getSensor:atSite:andFloor:</a></span></li>
+	
+	<li><span class="nodisclosure"></span><span class="sectionName"><a href="#//api/name/getSite:">getSite:</a></span></li>
+	
+	<li><span class="nodisclosure"></span><span class="sectionName"><a href="#//api/name/getTenant">getTenant</a></span></li>
+	
+	<li><span class="nodisclosure"></span><span class="sectionName"><a href="#//api/name/getZone:atSite:andFloor:">getZone:atSite:andFloor:</a></span></li>
+	
+	<li><span class="nodisclosure"></span><span class="sectionName"><a href="#//api/name/initWithTenantCode:andOrgCode:withUsername:andPassword:">initWithTenantCode:andOrgCode:withUsername:andPassword:</a></span></li>
+	
+	<li><span class="nodisclosure"></span><span class="sectionName"><a href="#//api/name/notifyRangedBeaconData:">notifyRangedBeaconData:</a></span></li>
+	
+	<li><span class="nodisclosure"></span><span class="sectionName"><a href="#//api/name/registerDevice:">registerDevice:</a></span></li>
+	
+	<li><span class="nodisclosure"></span><span class="sectionName"><a href="#//api/name/retrieveProximityUUIDs">retrieveProximityUUIDs</a></span></li>
+	
+	<li><span class="nodisclosure"></span><span class="sectionName"><a href="#//api/name/testConfigServer">testConfigServer</a></span></li>
+	
+	<li><span class="nodisclosure"></span><span class="sectionName"><a href="#//api/name/unregisterDevice:">unregisterDevice:</a></span></li>
+	
+</ul></li>
+
+
+			</ul>
+		</nav>
+		<article>
+			<div id="contents" class="isShowingTOC" role="main">
+				<a title="PIAdapter Class Reference" name="top"></a>
+				<div class="main-navigation navigation-top">
+					<ul>
+	<li><a href="../index.html">Index</a></li>
+	<li><a href="../hierarchy.html">Hierarchy</a></li>
+</ul>
+				</div>
+				<div id="header">
+					<div class="section-header">
+						<h1 class="title title-header">PIAdapter Class Reference</h1>
+					</div>		
+				</div>
+				<div id="container">	
+					
+					<div class="section section-specification"><table cellspacing="0"><tbody>
+						<tr>
+	<td class="specification-title">Inherits from</td>
+	<td class="specification-value">NSObject</td>
+</tr><tr>
+	<td class="specification-title">Declared in</td>
+	<td class="specification-value">PIAdapter.h<br />PIAdapter.m</td>
+</tr>
+						</tbody></table></div>
+					
+                    
+                    
+					
+					<div class="section section-overview">
+						<a title="Overview" name="overview"></a>
+						<h2 class="subtitle subtitle-overview">Overview</h2>
+						<p>Provides a set of helper functions for the management server REST API.</p>
+					</div>
+					
+					
+					
+					
+					
+					<div class="section section-tasks">
+						<a title="Tasks" name="tasks"></a>
+						<h2 class="subtitle subtitle-tasks">Tasks</h2>
+						
+						
+						
+						
+
+						<ul class="task-list">
+							<li>
+	<span class="tooltip">
+		<code><a href="#//api/name/initWithTenantCode:andOrgCode:withUsername:andPassword:">&ndash;&nbsp;initWithTenantCode:andOrgCode:withUsername:andPassword:</a></code>
+	</span>
+	
+	
+</li><li>
+	<span class="tooltip">
+		<code><a href="#//api/name/adapterWithTenantCode:andOrgCode:withUsername:andPassword:">+&nbsp;adapterWithTenantCode:andOrgCode:withUsername:andPassword:</a></code>
+	</span>
+	
+	
+</li><li>
+	<span class="tooltip">
+		<code><a href="#//api/name/notifyRangedBeaconData:">&ndash;&nbsp;notifyRangedBeaconData:</a></code>
+	</span>
+	
+	
+</li><li>
+	<span class="tooltip">
+		<code><a href="#//api/name/testConfigServer">&ndash;&nbsp;testConfigServer</a></code>
+	</span>
+	
+	
+</li><li>
+	<span class="tooltip">
+		<code><a href="#//api/name/retrieveProximityUUIDs">&ndash;&nbsp;retrieveProximityUUIDs</a></code>
+	</span>
+	
+	
+</li><li>
+	<span class="tooltip">
+		<code><a href="#//api/name/registerDevice:">&ndash;&nbsp;registerDevice:</a></code>
+	</span>
+	
+	
+</li><li>
+	<span class="tooltip">
+		<code><a href="#//api/name/unregisterDevice:">&ndash;&nbsp;unregisterDevice:</a></code>
+	</span>
+	
+	
+</li><li>
+	<span class="tooltip">
+		<code><a href="#//api/name/getFloorMapForSite:andFloor:">&ndash;&nbsp;getFloorMapForSite:andFloor:</a></code>
+	</span>
+	
+	
+</li><li>
+	<span class="tooltip">
+		<code><a href="#//api/name/getBeacon:atSite:andFloor:">&ndash;&nbsp;getBeacon:atSite:andFloor:</a></code>
+	</span>
+	
+	
+</li><li>
+	<span class="tooltip">
+		<code><a href="#//api/name/getAllBeaconsAtSite:andFloor:">&ndash;&nbsp;getAllBeaconsAtSite:andFloor:</a></code>
+	</span>
+	
+	
+</li><li>
+	<span class="tooltip">
+		<code><a href="#//api/name/getDevice:">&ndash;&nbsp;getDevice:</a></code>
+	</span>
+	
+	
+</li><li>
+	<span class="tooltip">
+		<code><a href="#//api/name/getFloor:atSite:">&ndash;&nbsp;getFloor:atSite:</a></code>
+	</span>
+	
+	
+</li><li>
+	<span class="tooltip">
+		<code><a href="#//api/name/getAllFloorsForSite:">&ndash;&nbsp;getAllFloorsForSite:</a></code>
+	</span>
+	
+	
+</li><li>
+	<span class="tooltip">
+		<code><a href="#//api/name/getOrg">&ndash;&nbsp;getOrg</a></code>
+	</span>
+	
+	
+</li><li>
+	<span class="tooltip">
+		<code><a href="#//api/name/getAllOrgs">&ndash;&nbsp;getAllOrgs</a></code>
+	</span>
+	
+	
+</li><li>
+	<span class="tooltip">
+		<code><a href="#//api/name/getSensor:atSite:andFloor:">&ndash;&nbsp;getSensor:atSite:andFloor:</a></code>
+	</span>
+	
+	
+</li><li>
+	<span class="tooltip">
+		<code><a href="#//api/name/getAllSensorsAtSite:andFloor:">&ndash;&nbsp;getAllSensorsAtSite:andFloor:</a></code>
+	</span>
+	
+	
+</li><li>
+	<span class="tooltip">
+		<code><a href="#//api/name/getSite:">&ndash;&nbsp;getSite:</a></code>
+	</span>
+	
+	
+</li><li>
+	<span class="tooltip">
+		<code><a href="#//api/name/getAllSites">&ndash;&nbsp;getAllSites</a></code>
+	</span>
+	
+	
+</li><li>
+	<span class="tooltip">
+		<code><a href="#//api/name/getTenant">&ndash;&nbsp;getTenant</a></code>
+	</span>
+	
+	
+</li><li>
+	<span class="tooltip">
+		<code><a href="#//api/name/getZone:atSite:andFloor:">&ndash;&nbsp;getZone:atSite:andFloor:</a></code>
+	</span>
+	
+	
+</li><li>
+	<span class="tooltip">
+		<code><a href="#//api/name/getAllZonesAtSite:andFloor:">&ndash;&nbsp;getAllZonesAtSite:andFloor:</a></code>
+	</span>
+	
+	
+</li>
+						</ul>
+						
+					</div>
+					
+					
+					
+					
+					
+					
+					
+					<div class="section section-methods">
+						<a title="Class Methods" name="class_methods"></a>
+						<h2 class="subtitle subtitle-methods">Class Methods</h2>
+						
+						<div class="section-method">
+	<a name="//api/name/adapterWithTenantCode:andOrgCode:withUsername:andPassword:" title="adapterWithTenantCode:andOrgCode:withUsername:andPassword:"></a>
+	<h3 class="subsubtitle method-title">adapterWithTenantCode:andOrgCode:withUsername:andPassword:</h3>
+	
+	
+	
+	<div class="method-subsection brief-description">
+		<p>Creates a PIAdapter and initializes it with the given tenant and organization codes.</p>
+	</div>		
+	
+    
+
+	<div class="method-subsection method-declaration"><code>+ (instancetype)adapterWithTenantCode:(NSString *)<em>tenantCode</em> andOrgCode:(NSString *)<em>orgCode</em> withUsername:(NSString *)<em>username</em> andPassword:(NSString *)<em>password</em></code></div>
+
+    
+	
+	<div class="method-subsection arguments-section parameters">
+		<h4 class="method-subtitle parameter-title">Parameters</h4>
+		
+		<dl class="argument-def parameter-def">
+			<dt><em>tenantCode</em></dt>
+			<dd><p>The code associated with your tenant acccount.</p></dd>
+		</dl>
+		
+		<dl class="argument-def parameter-def">
+			<dt><em>orgCode</em></dt>
+			<dd><p>The code associated with your organization account.</p></dd>
+		</dl>
+		
+		<dl class="argument-def parameter-def">
+			<dt><em>username</em></dt>
+			<dd><p>The username used in beacon notifications</p></dd>
+		</dl>
+		
+		<dl class="argument-def parameter-def">
+			<dt><em>password</em></dt>
+			<dd><p>The password used in beacon notifications</p></dd>
+		</dl>
+		
+	</div>
+	
+	
+	
+	<div class="method-subsection return">
+		<h4 class="method-subtitle parameter-title">Return Value</h4>
+		<p>BFTask that will resolve if successfully connected to the server.</p>
+	</div>
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	<div class="method-subsection declared-in-section">
+		<h4 class="method-subtitle">Declared In</h4>
+		<code class="declared-in-ref">PIAdapter.h</code><br />
+	</div>				
+	
+	
+</div>
+						
+					</div>
+					
+					
+					
+					<div class="section section-methods">
+						<a title="Instance Methods" name="instance_methods"></a>
+						<h2 class="subtitle subtitle-methods">Instance Methods</h2>
+						
+						<div class="section-method">
+	<a name="//api/name/getAllBeaconsAtSite:andFloor:" title="getAllBeaconsAtSite:andFloor:"></a>
+	<h3 class="subsubtitle method-title">getAllBeaconsAtSite:andFloor:</h3>
+	
+	
+	
+	<div class="method-subsection brief-description">
+		<p>Retrieves configuration information for the given site and floor.</p>
+	</div>		
+	
+    
+
+	<div class="method-subsection method-declaration"><code>- (BFTask *)getAllBeaconsAtSite:(NSString *)<em>siteCode</em> andFloor:(NSString *)<em>floorCode</em></code></div>
+
+    
+	
+	<div class="method-subsection arguments-section parameters">
+		<h4 class="method-subtitle parameter-title">Parameters</h4>
+		
+		<dl class="argument-def parameter-def">
+			<dt><em>siteCode</em></dt>
+			<dd><p>The siteCode</p></dd>
+		</dl>
+		
+		<dl class="argument-def parameter-def">
+			<dt><em>floorCode</em></dt>
+			<dd><p>The floorCode</p></dd>
+		</dl>
+		
+	</div>
+	
+	
+	
+	<div class="method-subsection return">
+		<h4 class="method-subtitle parameter-title">Return Value</h4>
+		<p>BFTask that will resolve if the server responds successfully.</p>
+	</div>
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	<div class="method-subsection declared-in-section">
+		<h4 class="method-subtitle">Declared In</h4>
+		<code class="declared-in-ref">PIAdapter.h</code><br />
+	</div>				
+	
+	
+</div>
+						
+						<div class="section-method">
+	<a name="//api/name/getAllFloorsForSite:" title="getAllFloorsForSite:"></a>
+	<h3 class="subsubtitle method-title">getAllFloorsForSite:</h3>
+	
+	
+	
+	<div class="method-subsection brief-description">
+		<p>Retrieves configuration information for all floors at the given site.</p>
+	</div>		
+	
+    
+
+	<div class="method-subsection method-declaration"><code>- (BFTask *)getAllFloorsForSite:(NSString *)<em>siteCode</em></code></div>
+
+    
+	
+	<div class="method-subsection arguments-section parameters">
+		<h4 class="method-subtitle parameter-title">Parameters</h4>
+		
+		<dl class="argument-def parameter-def">
+			<dt><em>siteCode</em></dt>
+			<dd><p>The siteCode</p></dd>
+		</dl>
+		
+	</div>
+	
+	
+	
+	<div class="method-subsection return">
+		<h4 class="method-subtitle parameter-title">Return Value</h4>
+		<p>BFTask that will resolve if the server responds successfully.</p>
+	</div>
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	<div class="method-subsection declared-in-section">
+		<h4 class="method-subtitle">Declared In</h4>
+		<code class="declared-in-ref">PIAdapter.h</code><br />
+	</div>				
+	
+	
+</div>
+						
+						<div class="section-method">
+	<a name="//api/name/getAllOrgs" title="getAllOrgs"></a>
+	<h3 class="subsubtitle method-title">getAllOrgs</h3>
+	
+	
+	
+	<div class="method-subsection brief-description">
+		<p>Retrieves configuration information for all organizations under the tenant
+associate with this adapter.</p>
+	</div>		
+	
+    
+
+	<div class="method-subsection method-declaration"><code>- (BFTask *)getAllOrgs</code></div>
+
+    
+	
+	
+	
+	<div class="method-subsection return">
+		<h4 class="method-subtitle parameter-title">Return Value</h4>
+		<p>BFTask that will resolve if the server responds successfully.</p>
+	</div>
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	<div class="method-subsection declared-in-section">
+		<h4 class="method-subtitle">Declared In</h4>
+		<code class="declared-in-ref">PIAdapter.h</code><br />
+	</div>				
+	
+	
+</div>
+						
+						<div class="section-method">
+	<a name="//api/name/getAllSensorsAtSite:andFloor:" title="getAllSensorsAtSite:andFloor:"></a>
+	<h3 class="subsubtitle method-title">getAllSensorsAtSite:andFloor:</h3>
+	
+	
+	
+	<div class="method-subsection brief-description">
+		<p>Retrieves all sensors for on the given floor.</p>
+	</div>		
+	
+    
+
+	<div class="method-subsection method-declaration"><code>- (BFTask *)getAllSensorsAtSite:(NSString *)<em>siteCode</em> andFloor:(NSString *)<em>floorCode</em></code></div>
+
+    
+	
+	<div class="method-subsection arguments-section parameters">
+		<h4 class="method-subtitle parameter-title">Parameters</h4>
+		
+		<dl class="argument-def parameter-def">
+			<dt><em>siteCode</em></dt>
+			<dd><p>The siteCode</p></dd>
+		</dl>
+		
+		<dl class="argument-def parameter-def">
+			<dt><em>floorCode</em></dt>
+			<dd><p>The floorCode</p></dd>
+		</dl>
+		
+	</div>
+	
+	
+	
+	<div class="method-subsection return">
+		<h4 class="method-subtitle parameter-title">Return Value</h4>
+		<p>BFTask that will resolve if the server responds successfully.</p>
+	</div>
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	<div class="method-subsection declared-in-section">
+		<h4 class="method-subtitle">Declared In</h4>
+		<code class="declared-in-ref">PIAdapter.h</code><br />
+	</div>				
+	
+	
+</div>
+						
+						<div class="section-method">
+	<a name="//api/name/getAllSites" title="getAllSites"></a>
+	<h3 class="subsubtitle method-title">getAllSites</h3>
+	
+	
+	
+	<div class="method-subsection brief-description">
+		<p>Retrieves configuration information for all sites associated with tenant
+and organization associated with this</p>
+	</div>		
+	
+    
+
+	<div class="method-subsection method-declaration"><code>- (BFTask *)getAllSites</code></div>
+
+    
+	
+	
+	
+	<div class="method-subsection return">
+		<h4 class="method-subtitle parameter-title">Return Value</h4>
+		<p>BFTask that will resolve if the server responds successfully.</p>
+	</div>
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	<div class="method-subsection declared-in-section">
+		<h4 class="method-subtitle">Declared In</h4>
+		<code class="declared-in-ref">PIAdapter.h</code><br />
+	</div>				
+	
+	
+</div>
+						
+						<div class="section-method">
+	<a name="//api/name/getAllZonesAtSite:andFloor:" title="getAllZonesAtSite:andFloor:"></a>
+	<h3 class="subsubtitle method-title">getAllZonesAtSite:andFloor:</h3>
+	
+	
+	
+	<div class="method-subsection brief-description">
+		<p>Retrieves all zones on the given floor.</p>
+	</div>		
+	
+    
+
+	<div class="method-subsection method-declaration"><code>- (BFTask *)getAllZonesAtSite:(NSString *)<em>siteCode</em> andFloor:(NSString *)<em>floorCode</em></code></div>
+
+    
+	
+	<div class="method-subsection arguments-section parameters">
+		<h4 class="method-subtitle parameter-title">Parameters</h4>
+		
+		<dl class="argument-def parameter-def">
+			<dt><em>siteCode</em></dt>
+			<dd><p>The siteCode</p></dd>
+		</dl>
+		
+		<dl class="argument-def parameter-def">
+			<dt><em>floorCode</em></dt>
+			<dd><p>The floorCode</p></dd>
+		</dl>
+		
+	</div>
+	
+	
+	
+	<div class="method-subsection return">
+		<h4 class="method-subtitle parameter-title">Return Value</h4>
+		<p>BFTask that will resolve if the server responds successfully.</p>
+	</div>
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	<div class="method-subsection declared-in-section">
+		<h4 class="method-subtitle">Declared In</h4>
+		<code class="declared-in-ref">PIAdapter.h</code><br />
+	</div>				
+	
+	
+</div>
+						
+						<div class="section-method">
+	<a name="//api/name/getBeacon:atSite:andFloor:" title="getBeacon:atSite:andFloor:"></a>
+	<h3 class="subsubtitle method-title">getBeacon:atSite:andFloor:</h3>
+	
+	
+	
+	<div class="method-subsection brief-description">
+		<p>Retrieves configuration information for the given beacon.</p>
+	</div>		
+	
+    
+
+	<div class="method-subsection method-declaration"><code>- (BFTask *)getBeacon:(NSString *)<em>beaconCode</em> atSite:(NSString *)<em>siteCode</em> andFloor:(NSString *)<em>floorCode</em></code></div>
+
+    
+	
+	<div class="method-subsection arguments-section parameters">
+		<h4 class="method-subtitle parameter-title">Parameters</h4>
+		
+		<dl class="argument-def parameter-def">
+			<dt><em>beaconCode</em></dt>
+			<dd><p>The beaconCode associated with this beacon.</p></dd>
+		</dl>
+		
+		<dl class="argument-def parameter-def">
+			<dt><em>siteCode</em></dt>
+			<dd><p>The siteCode associated with this beacon.</p></dd>
+		</dl>
+		
+		<dl class="argument-def parameter-def">
+			<dt><em>floorCode</em></dt>
+			<dd><p>The floorCode associated with this beacon.</p></dd>
+		</dl>
+		
+	</div>
+	
+	
+	
+	<div class="method-subsection return">
+		<h4 class="method-subtitle parameter-title">Return Value</h4>
+		<p>BFTask that will resolve if the server responds successfully.</p>
+	</div>
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	<div class="method-subsection declared-in-section">
+		<h4 class="method-subtitle">Declared In</h4>
+		<code class="declared-in-ref">PIAdapter.h</code><br />
+	</div>				
+	
+	
+</div>
+						
+						<div class="section-method">
+	<a name="//api/name/getDevice:" title="getDevice:"></a>
+	<h3 class="subsubtitle method-title">getDevice:</h3>
+	
+	
+	
+	<div class="method-subsection brief-description">
+		<p>Retrieves configuration information for the given device.</p>
+	</div>		
+	
+    
+
+	<div class="method-subsection method-declaration"><code>- (BFTask *)getDevice:(NSString *)<em>deviceCode</em></code></div>
+
+    
+	
+	<div class="method-subsection arguments-section parameters">
+		<h4 class="method-subtitle parameter-title">Parameters</h4>
+		
+		<dl class="argument-def parameter-def">
+			<dt><em>deviceCode</em></dt>
+			<dd><p>The deviceCode</p></dd>
+		</dl>
+		
+	</div>
+	
+	
+	
+	<div class="method-subsection return">
+		<h4 class="method-subtitle parameter-title">Return Value</h4>
+		<p>BFTask that will resolve if the server responds successfully.</p>
+	</div>
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	<div class="method-subsection declared-in-section">
+		<h4 class="method-subtitle">Declared In</h4>
+		<code class="declared-in-ref">PIAdapter.h</code><br />
+	</div>				
+	
+	
+</div>
+						
+						<div class="section-method">
+	<a name="//api/name/getFloor:atSite:" title="getFloor:atSite:"></a>
+	<h3 class="subsubtitle method-title">getFloor:atSite:</h3>
+	
+	
+	
+	<div class="method-subsection brief-description">
+		<p>Retrieves configuration information for the given floor and site.</p>
+	</div>		
+	
+    
+
+	<div class="method-subsection method-declaration"><code>- (BFTask *)getFloor:(NSString *)<em>floorCode</em> atSite:(NSString *)<em>siteCode</em></code></div>
+
+    
+	
+	<div class="method-subsection arguments-section parameters">
+		<h4 class="method-subtitle parameter-title">Parameters</h4>
+		
+		<dl class="argument-def parameter-def">
+			<dt><em>floorCode</em></dt>
+			<dd><p>The floorCode</p></dd>
+		</dl>
+		
+		<dl class="argument-def parameter-def">
+			<dt><em>siteCode</em></dt>
+			<dd><p>The siteCode</p></dd>
+		</dl>
+		
+	</div>
+	
+	
+	
+	<div class="method-subsection return">
+		<h4 class="method-subtitle parameter-title">Return Value</h4>
+		<p>BFTask that will resolve if the server responds successfully.</p>
+	</div>
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	<div class="method-subsection declared-in-section">
+		<h4 class="method-subtitle">Declared In</h4>
+		<code class="declared-in-ref">PIAdapter.h</code><br />
+	</div>				
+	
+	
+</div>
+						
+						<div class="section-method">
+	<a name="//api/name/getFloorMapForSite:andFloor:" title="getFloorMapForSite:andFloor:"></a>
+	<h3 class="subsubtitle method-title">getFloorMapForSite:andFloor:</h3>
+	
+	
+	
+	<div class="method-subsection brief-description">
+		<p>Retrieves the map associated with the given site and floor.</p>
+	</div>		
+	
+    
+
+	<div class="method-subsection method-declaration"><code>- (BFTask *)getFloorMapForSite:(NSString *)<em>siteCode</em> andFloor:(NSString *)<em>floorCode</em></code></div>
+
+    
+	
+	<div class="method-subsection arguments-section parameters">
+		<h4 class="method-subtitle parameter-title">Parameters</h4>
+		
+		<dl class="argument-def parameter-def">
+			<dt><em>siteCode</em></dt>
+			<dd><p>The siteCode associated with this map.</p></dd>
+		</dl>
+		
+		<dl class="argument-def parameter-def">
+			<dt><em>floorCode</em></dt>
+			<dd><p>The floorCode associated with this map.</p></dd>
+		</dl>
+		
+	</div>
+	
+	
+	
+	<div class="method-subsection return">
+		<h4 class="method-subtitle parameter-title">Return Value</h4>
+		<p>BFTask that will resolve if the server responds successfully.</p>
+	</div>
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	<div class="method-subsection declared-in-section">
+		<h4 class="method-subtitle">Declared In</h4>
+		<code class="declared-in-ref">PIAdapter.h</code><br />
+	</div>				
+	
+	
+</div>
+						
+						<div class="section-method">
+	<a name="//api/name/getOrg" title="getOrg"></a>
+	<h3 class="subsubtitle method-title">getOrg</h3>
+	
+	
+	
+	<div class="method-subsection brief-description">
+		<p>Retrieves configuration information for the org associated with this adapter.</p>
+	</div>		
+	
+    
+
+	<div class="method-subsection method-declaration"><code>- (BFTask *)getOrg</code></div>
+
+    
+	
+	
+	
+	<div class="method-subsection return">
+		<h4 class="method-subtitle parameter-title">Return Value</h4>
+		<p>BFTask that will resolve if the server responds successfully.</p>
+	</div>
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	<div class="method-subsection declared-in-section">
+		<h4 class="method-subtitle">Declared In</h4>
+		<code class="declared-in-ref">PIAdapter.h</code><br />
+	</div>				
+	
+	
+</div>
+						
+						<div class="section-method">
+	<a name="//api/name/getSensor:atSite:andFloor:" title="getSensor:atSite:andFloor:"></a>
+	<h3 class="subsubtitle method-title">getSensor:atSite:andFloor:</h3>
+	
+	
+	
+	<div class="method-subsection brief-description">
+		<p>Retrieves configuration information for the specified sensor</p>
+	</div>		
+	
+    
+
+	<div class="method-subsection method-declaration"><code>- (BFTask *)getSensor:(NSString *)<em>sensorCode</em> atSite:(NSString *)<em>siteCode</em> andFloor:(NSString *)<em>floorCode</em></code></div>
+
+    
+	
+	<div class="method-subsection arguments-section parameters">
+		<h4 class="method-subtitle parameter-title">Parameters</h4>
+		
+		<dl class="argument-def parameter-def">
+			<dt><em>sensorCode</em></dt>
+			<dd><p>The sensorCode</p></dd>
+		</dl>
+		
+		<dl class="argument-def parameter-def">
+			<dt><em>siteCode</em></dt>
+			<dd><p>The siteCode</p></dd>
+		</dl>
+		
+		<dl class="argument-def parameter-def">
+			<dt><em>floorCode</em></dt>
+			<dd><p>The floorCode</p></dd>
+		</dl>
+		
+	</div>
+	
+	
+	
+	<div class="method-subsection return">
+		<h4 class="method-subtitle parameter-title">Return Value</h4>
+		<p>BFTask that will resolve if the server responds successfully.</p>
+	</div>
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	<div class="method-subsection declared-in-section">
+		<h4 class="method-subtitle">Declared In</h4>
+		<code class="declared-in-ref">PIAdapter.h</code><br />
+	</div>				
+	
+	
+</div>
+						
+						<div class="section-method">
+	<a name="//api/name/getSite:" title="getSite:"></a>
+	<h3 class="subsubtitle method-title">getSite:</h3>
+	
+	
+	
+	<div class="method-subsection brief-description">
+		<p>Retrieves configuration information for the given site.</p>
+	</div>		
+	
+    
+
+	<div class="method-subsection method-declaration"><code>- (BFTask *)getSite:(NSString *)<em>siteCode</em></code></div>
+
+    
+	
+	<div class="method-subsection arguments-section parameters">
+		<h4 class="method-subtitle parameter-title">Parameters</h4>
+		
+		<dl class="argument-def parameter-def">
+			<dt><em>siteCode</em></dt>
+			<dd><p>The siteCode</p></dd>
+		</dl>
+		
+	</div>
+	
+	
+	
+	<div class="method-subsection return">
+		<h4 class="method-subtitle parameter-title">Return Value</h4>
+		<p>BFTask that will resolve if the server responds successfully.</p>
+	</div>
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	<div class="method-subsection declared-in-section">
+		<h4 class="method-subtitle">Declared In</h4>
+		<code class="declared-in-ref">PIAdapter.h</code><br />
+	</div>				
+	
+	
+</div>
+						
+						<div class="section-method">
+	<a name="//api/name/getTenant" title="getTenant"></a>
+	<h3 class="subsubtitle method-title">getTenant</h3>
+	
+	
+	
+	<div class="method-subsection brief-description">
+		<p>Retrieves the configuration information for the tenant associated with this
+adapter.</p>
+	</div>		
+	
+    
+
+	<div class="method-subsection method-declaration"><code>- (BFTask *)getTenant</code></div>
+
+    
+	
+	
+	
+	<div class="method-subsection return">
+		<h4 class="method-subtitle parameter-title">Return Value</h4>
+		<p>BFTask that will resolve if the server responds successfully.</p>
+	</div>
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	<div class="method-subsection declared-in-section">
+		<h4 class="method-subtitle">Declared In</h4>
+		<code class="declared-in-ref">PIAdapter.h</code><br />
+	</div>				
+	
+	
+</div>
+						
+						<div class="section-method">
+	<a name="//api/name/getZone:atSite:andFloor:" title="getZone:atSite:andFloor:"></a>
+	<h3 class="subsubtitle method-title">getZone:atSite:andFloor:</h3>
+	
+	
+	
+	<div class="method-subsection brief-description">
+		<p>Retrieves the configuration information for the given zone.</p>
+	</div>		
+	
+    
+
+	<div class="method-subsection method-declaration"><code>- (BFTask *)getZone:(NSString *)<em>zoneCode</em> atSite:(NSString *)<em>siteCode</em> andFloor:(NSString *)<em>floorCode</em></code></div>
+
+    
+	
+	<div class="method-subsection arguments-section parameters">
+		<h4 class="method-subtitle parameter-title">Parameters</h4>
+		
+		<dl class="argument-def parameter-def">
+			<dt><em>zoneCode</em></dt>
+			<dd><p>the zoneCode</p></dd>
+		</dl>
+		
+		<dl class="argument-def parameter-def">
+			<dt><em>siteCode</em></dt>
+			<dd><p>The siteCode</p></dd>
+		</dl>
+		
+		<dl class="argument-def parameter-def">
+			<dt><em>floorCode</em></dt>
+			<dd><p>The floorCode</p></dd>
+		</dl>
+		
+	</div>
+	
+	
+	
+	<div class="method-subsection return">
+		<h4 class="method-subtitle parameter-title">Return Value</h4>
+		<p>BFTask that will resolve if the server responds successfully.</p>
+	</div>
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	<div class="method-subsection declared-in-section">
+		<h4 class="method-subtitle">Declared In</h4>
+		<code class="declared-in-ref">PIAdapter.h</code><br />
+	</div>				
+	
+	
+</div>
+						
+						<div class="section-method">
+	<a name="//api/name/initWithTenantCode:andOrgCode:withUsername:andPassword:" title="initWithTenantCode:andOrgCode:withUsername:andPassword:"></a>
+	<h3 class="subsubtitle method-title">initWithTenantCode:andOrgCode:withUsername:andPassword:</h3>
+	
+	
+	
+	<div class="method-subsection brief-description">
+		<p>Creates a PIAdapter and initializes it with the given tenant and organization codes.</p>
+	</div>		
+	
+    
+
+	<div class="method-subsection method-declaration"><code>- (instancetype)initWithTenantCode:(NSString *)<em>tenantCode</em> andOrgCode:(NSString *)<em>orgCode</em> withUsername:(NSString *)<em>username</em> andPassword:(NSString *)<em>password</em></code></div>
+
+    
+	
+	<div class="method-subsection arguments-section parameters">
+		<h4 class="method-subtitle parameter-title">Parameters</h4>
+		
+		<dl class="argument-def parameter-def">
+			<dt><em>tenantCode</em></dt>
+			<dd><p>The code associated with your tenant acccount.</p></dd>
+		</dl>
+		
+		<dl class="argument-def parameter-def">
+			<dt><em>orgCode</em></dt>
+			<dd><p>The code associated with your organization account.</p></dd>
+		</dl>
+		
+		<dl class="argument-def parameter-def">
+			<dt><em>username</em></dt>
+			<dd><p>The username used in beacon notifications</p></dd>
+		</dl>
+		
+		<dl class="argument-def parameter-def">
+			<dt><em>password</em></dt>
+			<dd><p>The password used in beacon notifications</p></dd>
+		</dl>
+		
+	</div>
+	
+	
+	
+	<div class="method-subsection return">
+		<h4 class="method-subtitle parameter-title">Return Value</h4>
+		<p>BFTask that will resolve if successfully connected to the server.</p>
+	</div>
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	<div class="method-subsection declared-in-section">
+		<h4 class="method-subtitle">Declared In</h4>
+		<code class="declared-in-ref">PIAdapter.h</code><br />
+	</div>				
+	
+	
+</div>
+						
+						<div class="section-method">
+	<a name="//api/name/notifyRangedBeaconData:" title="notifyRangedBeaconData:"></a>
+	<h3 class="subsubtitle method-title">notifyRangedBeaconData:</h3>
+	
+	
+	
+	<div class="method-subsection brief-description">
+		<p>Sends the given beaconData to the PI server</p>
+	</div>		
+	
+    
+
+	<div class="method-subsection method-declaration"><code>- (BFTask *)notifyRangedBeaconData:(NSArray *)<em>beaconData</em></code></div>
+
+    
+	
+	<div class="method-subsection arguments-section parameters">
+		<h4 class="method-subtitle parameter-title">Parameters</h4>
+		
+		<dl class="argument-def parameter-def">
+			<dt><em>beaconData</em></dt>
+			<dd><p>An array of <a href="../Classes/PIRangedBeaconData.html">PIRangedBeaconData</a> objects.</p></dd>
+		</dl>
+		
+	</div>
+	
+	
+	
+	<div class="method-subsection return">
+		<h4 class="method-subtitle parameter-title">Return Value</h4>
+		<p>BFTask that will resolve if the server accepts the beacon data.</p>
+	</div>
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	<div class="method-subsection declared-in-section">
+		<h4 class="method-subtitle">Declared In</h4>
+		<code class="declared-in-ref">PIAdapter.h</code><br />
+	</div>				
+	
+	
+</div>
+						
+						<div class="section-method">
+	<a name="//api/name/registerDevice:" title="registerDevice:"></a>
+	<h3 class="subsubtitle method-title">registerDevice:</h3>
+	
+	
+	
+	<div class="method-subsection brief-description">
+		<p>Registers the given device for this tenant and organization, using the descriptor as the identifier.</p>
+	</div>		
+	
+    
+
+	<div class="method-subsection method-declaration"><code>- (BFTask *)registerDevice:(PIDeviceInfo *)<em>deviceInfo</em></code></div>
+
+    
+	
+	<div class="method-subsection arguments-section parameters">
+		<h4 class="method-subtitle parameter-title">Parameters</h4>
+		
+		<dl class="argument-def parameter-def">
+			<dt><em>deviceInfo</em></dt>
+			<dd><p>The deviceInfo you wish to use to register this device. Note: The isRegistered field will be set to true</p></dd>
+		</dl>
+		
+	</div>
+	
+	
+	
+	<div class="method-subsection return">
+		<h4 class="method-subtitle parameter-title">Return Value</h4>
+		<p>BFTask that will resolve if the server responds successfully.</p>
+	</div>
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	<div class="method-subsection declared-in-section">
+		<h4 class="method-subtitle">Declared In</h4>
+		<code class="declared-in-ref">PIAdapter.h</code><br />
+	</div>				
+	
+	
+</div>
+						
+						<div class="section-method">
+	<a name="//api/name/retrieveProximityUUIDs" title="retrieveProximityUUIDs"></a>
+	<h3 class="subsubtitle method-title">retrieveProximityUUIDs</h3>
+	
+	
+	
+	<div class="method-subsection brief-description">
+		<p>Retrieves the proximity UUIDs associated with this tenant and organization.</p>
+	</div>		
+	
+    
+
+	<div class="method-subsection method-declaration"><code>- (BFTask *)retrieveProximityUUIDs</code></div>
+
+    
+	
+	
+	
+	<div class="method-subsection return">
+		<h4 class="method-subtitle parameter-title">Return Value</h4>
+		<p>BFTask that will resolve on an NSArray of proximity UUID strings.</p>
+	</div>
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	<div class="method-subsection declared-in-section">
+		<h4 class="method-subtitle">Declared In</h4>
+		<code class="declared-in-ref">PIAdapter.h</code><br />
+	</div>				
+	
+	
+</div>
+						
+						<div class="section-method">
+	<a name="//api/name/testConfigServer" title="testConfigServer"></a>
+	<h3 class="subsubtitle method-title">testConfigServer</h3>
+	
+	
+	
+	<div class="method-subsection brief-description">
+		<p>Tests to ensure it can communicate with the config server.</p>
+	</div>		
+	
+    
+
+	<div class="method-subsection method-declaration"><code>- (BFTask *)testConfigServer</code></div>
+
+    
+	
+	
+	
+	<div class="method-subsection return">
+		<h4 class="method-subtitle parameter-title">Return Value</h4>
+		<p>BFTask that will resolve if the server responds successfully.</p>
+	</div>
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	<div class="method-subsection declared-in-section">
+		<h4 class="method-subtitle">Declared In</h4>
+		<code class="declared-in-ref">PIAdapter.h</code><br />
+	</div>				
+	
+	
+</div>
+						
+						<div class="section-method">
+	<a name="//api/name/unregisterDevice:" title="unregisterDevice:"></a>
+	<h3 class="subsubtitle method-title">unregisterDevice:</h3>
+	
+	
+	
+	<div class="method-subsection brief-description">
+		<p>Unregisters the given device for this tenant and organization, using the descriptor as the identifier.</p>
+	</div>		
+	
+    
+
+	<div class="method-subsection method-declaration"><code>- (BFTask *)unregisterDevice:(PIDeviceInfo *)<em>deviceInfo</em></code></div>
+
+    
+	
+	<div class="method-subsection arguments-section parameters">
+		<h4 class="method-subtitle parameter-title">Parameters</h4>
+		
+		<dl class="argument-def parameter-def">
+			<dt><em>deviceInfo</em></dt>
+			<dd><p>The deviceInfo you wish to use to unregister this device. Note: The isRegistered field will be set to false</p></dd>
+		</dl>
+		
+	</div>
+	
+	
+	
+	<div class="method-subsection return">
+		<h4 class="method-subtitle parameter-title">Return Value</h4>
+		<p>BFTask that will resolve if the server responds successfully.</p>
+	</div>
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	<div class="method-subsection declared-in-section">
+		<h4 class="method-subtitle">Declared In</h4>
+		<code class="declared-in-ref">PIAdapter.h</code><br />
+	</div>				
+	
+	
+</div>
+						
+					</div>
+					
+					
+                    
+                    
+				</div>
+				<div class="main-navigation navigation-bottom">
+					<ul>
+	<li><a href="../index.html">Index</a></li>
+	<li><a href="../hierarchy.html">Hierarchy</a></li>
+</ul>
+				</div>
+				<div id="footer">
+					<hr />
+					<div class="footer-copyright">
+						<p><span class="copyright">&copy; 2015 IBM Mobile First - Presence Insights. All rights reserved. (Last updated: 2015-06-04)</span><br />
+						
+						<span class="generator">Generated by <a href="http://appledoc.gentlebytes.com">appledoc 2.2 (build 963)</a>.</span></p>
+						
+					</div>
+				</div>
+			</div>
+		</article>
+		<script type="text/javascript">
+			function jumpToChange()
+			{
+				window.location.hash = this.options[this.selectedIndex].value;
+			}
+			
+			function toggleTOC()
+			{
+				var contents = document.getElementById('contents');
+				var tocContainer = document.getElementById('tocContainer');
+				
+				if (this.getAttribute('class') == 'open')
+				{
+					this.setAttribute('class', '');
+					contents.setAttribute('class', '');
+					tocContainer.setAttribute('class', '');
+					
+					window.name = "hideTOC";
+				}
+				else
+				{
+					this.setAttribute('class', 'open');
+					contents.setAttribute('class', 'isShowingTOC');
+					tocContainer.setAttribute('class', 'isShowingTOC');
+					
+					window.name = "";
+				}
+				return false;
+			}
+			
+			function toggleTOCEntryChildren(e)
+			{
+				e.stopPropagation();
+				var currentClass = this.getAttribute('class');
+				if (currentClass == 'children') {
+					this.setAttribute('class', 'children open');
+				}
+				else if (currentClass == 'children open') {
+					this.setAttribute('class', 'children');
+				}
+				return false;
+			}
+			
+			function tocEntryClick(e)
+			{
+				e.stopPropagation();
+				return true;
+			}
+			
+			function init()
+			{
+				var selectElement = document.getElementById('jumpTo');
+				selectElement.addEventListener('change', jumpToChange, false);
+				
+				var tocButton = document.getElementById('table_of_contents');
+				tocButton.addEventListener('click', toggleTOC, false);
+				
+				var taskTreeItem = document.getElementById('task_treeitem');
+				if (taskTreeItem.getElementsByTagName('li').length > 0)
+				{
+					taskTreeItem.setAttribute('class', 'children');
+					taskTreeItem.firstChild.setAttribute('class', 'disclosure');
+				}
+				
+				var tocList = document.getElementById('toc');
+				
+				var tocEntries = tocList.getElementsByTagName('li');
+				for (var i = 0; i < tocEntries.length; i++) {
+					tocEntries[i].addEventListener('click', toggleTOCEntryChildren, false);
+				}
+				
+				var tocLinks = tocList.getElementsByTagName('a');
+				for (var i = 0; i < tocLinks.length; i++) {
+					tocLinks[i].addEventListener('click', tocEntryClick, false);
+				}
+				
+				if (window.name == "hideTOC") {
+					toggleTOC.call(tocButton);
+				}
+			}
+			
+			window.onload = init;
+			
+			// If showing in Xcode, hide the TOC and Header
+			if (navigator.userAgent.match(/xcode/i)) {
+				document.getElementById("contents").className = "hideInXcode"
+				document.getElementById("tocContainer").className = "hideInXcode"
+				document.getElementById("top_header").className = "hideInXcode"
+			}
+			
+		</script>
+	</body>
+</html>

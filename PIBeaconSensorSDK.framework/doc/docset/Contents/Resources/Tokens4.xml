@@ -1,0 +1,373 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Tokens version="1.0">
+	<File path="Classes/PIRangedBeaconData.html">
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/cl/PIRangedBeaconData</TokenIdentifier>
+			<Abstract type="html">Encapsulates the information reported when a beacon is ranged</Abstract>
+			<DeclaredIn>PIRangedBeaconData.h</DeclaredIn>
+            
+			
+			<NodeRef refid="4"/>
+		</Token>
+		
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/instm/PIRangedBeaconData/initBeacon:atDetectedTime:</TokenIdentifier>
+			<Abstract type="html">Initializes a PIRangedBeaconData with the given CLBeacon at the given detected time.</Abstract>
+			<DeclaredIn>PIRangedBeaconData.h</DeclaredIn>
+			
+			<Declaration>- (instancetype)initBeacon:(CLBeacon *)beacon atDetectedTime:(NSDate *)detectedTime</Declaration>
+			<Parameters>
+				<Parameter>
+					<Name>beacon</Name>
+					<Abstract type="html">The beacon that was ranged.</Abstract>
+				</Parameter><Parameter>
+					<Name>detectedTime</Name>
+					<Abstract type="html">The time at which the beacon was detected</Abstract>
+				</Parameter>
+			</Parameters>
+			
+			<Anchor>//api/name/initBeacon:atDetectedTime:</Anchor>
+            <NodeRef refid="4"/>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/instm/PIRangedBeaconData/setUuid:</TokenIdentifier>
+			<Abstract type="html">The Proximity UUID of the beacon</Abstract>
+			<DeclaredIn>PIRangedBeaconData.h</DeclaredIn>
+			
+			<Declaration>@property (readonly) NSUUID *uuid</Declaration>
+			
+			
+			<Anchor>//api/name/uuid</Anchor>
+            <NodeRef refid="4"/>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/instm/PIRangedBeaconData/uuid</TokenIdentifier>
+			<Abstract type="html">The Proximity UUID of the beacon</Abstract>
+			<DeclaredIn>PIRangedBeaconData.h</DeclaredIn>
+			
+			<Declaration>@property (readonly) NSUUID *uuid</Declaration>
+			
+			
+			<Anchor>//api/name/uuid</Anchor>
+            <NodeRef refid="4"/>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/instp/PIRangedBeaconData/uuid</TokenIdentifier>
+			<Abstract type="html">The Proximity UUID of the beacon</Abstract>
+			<DeclaredIn>PIRangedBeaconData.h</DeclaredIn>
+			
+			<Declaration>@property (readonly) NSUUID *uuid</Declaration>
+			
+			
+			<Anchor>//api/name/uuid</Anchor>
+            <NodeRef refid="4"/>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/instm/PIRangedBeaconData/setMajor:</TokenIdentifier>
+			<Abstract type="html">The major id of the beacon</Abstract>
+			<DeclaredIn>PIRangedBeaconData.h</DeclaredIn>
+			
+			<Declaration>@property (readonly) NSNumber *major</Declaration>
+			
+			
+			<Anchor>//api/name/major</Anchor>
+            <NodeRef refid="4"/>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/instm/PIRangedBeaconData/major</TokenIdentifier>
+			<Abstract type="html">The major id of the beacon</Abstract>
+			<DeclaredIn>PIRangedBeaconData.h</DeclaredIn>
+			
+			<Declaration>@property (readonly) NSNumber *major</Declaration>
+			
+			
+			<Anchor>//api/name/major</Anchor>
+            <NodeRef refid="4"/>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/instp/PIRangedBeaconData/major</TokenIdentifier>
+			<Abstract type="html">The major id of the beacon</Abstract>
+			<DeclaredIn>PIRangedBeaconData.h</DeclaredIn>
+			
+			<Declaration>@property (readonly) NSNumber *major</Declaration>
+			
+			
+			<Anchor>//api/name/major</Anchor>
+            <NodeRef refid="4"/>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/instm/PIRangedBeaconData/setMinor:</TokenIdentifier>
+			<Abstract type="html">The minor id of the beacon</Abstract>
+			<DeclaredIn>PIRangedBeaconData.h</DeclaredIn>
+			
+			<Declaration>@property (readonly) NSNumber *minor</Declaration>
+			
+			
+			<Anchor>//api/name/minor</Anchor>
+            <NodeRef refid="4"/>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/instm/PIRangedBeaconData/minor</TokenIdentifier>
+			<Abstract type="html">The minor id of the beacon</Abstract>
+			<DeclaredIn>PIRangedBeaconData.h</DeclaredIn>
+			
+			<Declaration>@property (readonly) NSNumber *minor</Declaration>
+			
+			
+			<Anchor>//api/name/minor</Anchor>
+            <NodeRef refid="4"/>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/instp/PIRangedBeaconData/minor</TokenIdentifier>
+			<Abstract type="html">The minor id of the beacon</Abstract>
+			<DeclaredIn>PIRangedBeaconData.h</DeclaredIn>
+			
+			<Declaration>@property (readonly) NSNumber *minor</Declaration>
+			
+			
+			<Anchor>//api/name/minor</Anchor>
+            <NodeRef refid="4"/>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/instm/PIRangedBeaconData/setAccuracy:</TokenIdentifier>
+			<Abstract type="html">The accuracy, in meters, of the beacon&apos;s proximity.</Abstract>
+			<DeclaredIn>PIRangedBeaconData.h</DeclaredIn>
+			
+			<Declaration>@property (readonly) CLLocationAccuracy accuracy</Declaration>
+			
+			
+			<Anchor>//api/name/accuracy</Anchor>
+            <NodeRef refid="4"/>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/instm/PIRangedBeaconData/accuracy</TokenIdentifier>
+			<Abstract type="html">The accuracy, in meters, of the beacon&apos;s proximity.</Abstract>
+			<DeclaredIn>PIRangedBeaconData.h</DeclaredIn>
+			
+			<Declaration>@property (readonly) CLLocationAccuracy accuracy</Declaration>
+			
+			
+			<Anchor>//api/name/accuracy</Anchor>
+            <NodeRef refid="4"/>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/instp/PIRangedBeaconData/accuracy</TokenIdentifier>
+			<Abstract type="html">The accuracy, in meters, of the beacon&apos;s proximity.</Abstract>
+			<DeclaredIn>PIRangedBeaconData.h</DeclaredIn>
+			
+			<Declaration>@property (readonly) CLLocationAccuracy accuracy</Declaration>
+			
+			
+			<Anchor>//api/name/accuracy</Anchor>
+            <NodeRef refid="4"/>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/instm/PIRangedBeaconData/setRssi:</TokenIdentifier>
+			<Abstract type="html">The RSSI value of the ranged beacon</Abstract>
+			<DeclaredIn>PIRangedBeaconData.h</DeclaredIn>
+			
+			<Declaration>@property (readonly) NSInteger rssi</Declaration>
+			
+			
+			<Anchor>//api/name/rssi</Anchor>
+            <NodeRef refid="4"/>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/instm/PIRangedBeaconData/rssi</TokenIdentifier>
+			<Abstract type="html">The RSSI value of the ranged beacon</Abstract>
+			<DeclaredIn>PIRangedBeaconData.h</DeclaredIn>
+			
+			<Declaration>@property (readonly) NSInteger rssi</Declaration>
+			
+			
+			<Anchor>//api/name/rssi</Anchor>
+            <NodeRef refid="4"/>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/instp/PIRangedBeaconData/rssi</TokenIdentifier>
+			<Abstract type="html">The RSSI value of the ranged beacon</Abstract>
+			<DeclaredIn>PIRangedBeaconData.h</DeclaredIn>
+			
+			<Declaration>@property (readonly) NSInteger rssi</Declaration>
+			
+			
+			<Anchor>//api/name/rssi</Anchor>
+            <NodeRef refid="4"/>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/instm/PIRangedBeaconData/setProximity:</TokenIdentifier>
+			<Abstract type="html">The proximity of the beacon (Immediate, Near, Far, &amp;amp; Unknown)</Abstract>
+			<DeclaredIn>PIRangedBeaconData.h</DeclaredIn>
+			
+			<Declaration>@property (readonly) CLProximity proximity</Declaration>
+			
+			
+			<Anchor>//api/name/proximity</Anchor>
+            <NodeRef refid="4"/>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/instm/PIRangedBeaconData/proximity</TokenIdentifier>
+			<Abstract type="html">The proximity of the beacon (Immediate, Near, Far, &amp;amp; Unknown)</Abstract>
+			<DeclaredIn>PIRangedBeaconData.h</DeclaredIn>
+			
+			<Declaration>@property (readonly) CLProximity proximity</Declaration>
+			
+			
+			<Anchor>//api/name/proximity</Anchor>
+            <NodeRef refid="4"/>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/instp/PIRangedBeaconData/proximity</TokenIdentifier>
+			<Abstract type="html">The proximity of the beacon (Immediate, Near, Far, &amp;amp; Unknown)</Abstract>
+			<DeclaredIn>PIRangedBeaconData.h</DeclaredIn>
+			
+			<Declaration>@property (readonly) CLProximity proximity</Declaration>
+			
+			
+			<Anchor>//api/name/proximity</Anchor>
+            <NodeRef refid="4"/>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/instm/PIRangedBeaconData/setDetectedTime:</TokenIdentifier>
+			<Abstract type="html">The time that the beacon was detected</Abstract>
+			<DeclaredIn>PIRangedBeaconData.h</DeclaredIn>
+			
+			<Declaration>@property (readonly) NSDate *detectedTime</Declaration>
+			
+			
+			<Anchor>//api/name/detectedTime</Anchor>
+            <NodeRef refid="4"/>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/instm/PIRangedBeaconData/detectedTime</TokenIdentifier>
+			<Abstract type="html">The time that the beacon was detected</Abstract>
+			<DeclaredIn>PIRangedBeaconData.h</DeclaredIn>
+			
+			<Declaration>@property (readonly) NSDate *detectedTime</Declaration>
+			
+			
+			<Anchor>//api/name/detectedTime</Anchor>
+            <NodeRef refid="4"/>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/instp/PIRangedBeaconData/detectedTime</TokenIdentifier>
+			<Abstract type="html">The time that the beacon was detected</Abstract>
+			<DeclaredIn>PIRangedBeaconData.h</DeclaredIn>
+			
+			<Declaration>@property (readonly) NSDate *detectedTime</Declaration>
+			
+			
+			<Anchor>//api/name/detectedTime</Anchor>
+            <NodeRef refid="4"/>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/instm/PIRangedBeaconData/setDeviceDescriptor:</TokenIdentifier>
+			<Abstract type="html">The descriptor of this device.</Abstract>
+			<DeclaredIn>PIRangedBeaconData.h</DeclaredIn>
+			
+			<Declaration>@property (readonly) NSString *deviceDescriptor</Declaration>
+			
+			
+			<Anchor>//api/name/deviceDescriptor</Anchor>
+            <NodeRef refid="4"/>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/instm/PIRangedBeaconData/deviceDescriptor</TokenIdentifier>
+			<Abstract type="html">The descriptor of this device.</Abstract>
+			<DeclaredIn>PIRangedBeaconData.h</DeclaredIn>
+			
+			<Declaration>@property (readonly) NSString *deviceDescriptor</Declaration>
+			
+			
+			<Anchor>//api/name/deviceDescriptor</Anchor>
+            <NodeRef refid="4"/>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/instp/PIRangedBeaconData/deviceDescriptor</TokenIdentifier>
+			<Abstract type="html">The descriptor of this device.</Abstract>
+			<DeclaredIn>PIRangedBeaconData.h</DeclaredIn>
+			
+			<Declaration>@property (readonly) NSString *deviceDescriptor</Declaration>
+			
+			
+			<Anchor>//api/name/deviceDescriptor</Anchor>
+            <NodeRef refid="4"/>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/instm/PIRangedBeaconData/setBeacon:</TokenIdentifier>
+			<Abstract type="html">The ranged beacon.</Abstract>
+			<DeclaredIn>PIRangedBeaconData.h</DeclaredIn>
+			
+			<Declaration>@property (readonly) CLBeacon *beacon</Declaration>
+			
+			
+			<Anchor>//api/name/beacon</Anchor>
+            <NodeRef refid="4"/>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/instm/PIRangedBeaconData/beacon</TokenIdentifier>
+			<Abstract type="html">The ranged beacon.</Abstract>
+			<DeclaredIn>PIRangedBeaconData.h</DeclaredIn>
+			
+			<Declaration>@property (readonly) CLBeacon *beacon</Declaration>
+			
+			
+			<Anchor>//api/name/beacon</Anchor>
+            <NodeRef refid="4"/>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/instp/PIRangedBeaconData/beacon</TokenIdentifier>
+			<Abstract type="html">The ranged beacon.</Abstract>
+			<DeclaredIn>PIRangedBeaconData.h</DeclaredIn>
+			
+			<Declaration>@property (readonly) CLBeacon *beacon</Declaration>
+			
+			
+			<Anchor>//api/name/beacon</Anchor>
+            <NodeRef refid="4"/>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/instm/PIRangedBeaconData/toJSON</TokenIdentifier>
+			<Abstract type="html">Converts the BeaconData to JSON</Abstract>
+			<DeclaredIn>PIRangedBeaconData.h</DeclaredIn>
+			
+			<Declaration>- (NSDictionary *)toJSON</Declaration>
+			
+			
+			<Anchor>//api/name/toJSON</Anchor>
+            <NodeRef refid="4"/>
+		</Token>
+		
+        
+	</File>
+</Tokens>
