@@ -23,6 +23,8 @@
 #import "SBUIColor.h"
 #import "ConfigData.h"
 
+#import <CloudantSync.h>
+
 
 @interface AppDelegate ()
 
@@ -79,9 +81,84 @@
         
     }
     
+    NSError *outError = nil;
+    NSFileManager *fileManager= [NSFileManager defaultManager];
+    
+    NSURL *documentsDir = [[fileManager URLsForDirectory:NSDocumentDirectory
+                                               inDomains:NSUserDomainMask] lastObject];
+    NSURL *storeURL = [documentsDir URLByAppendingPathComponent:@"test"];
+    
+    
+    NSString *path = [storeURL path];
+    
+    NSError *error = nil;
+
+    
+    // 7580d36a4fa13981ea4ae1b630a6e7472265c424s
+    
+    CDTDatastoreManager *manager =
+    [[CDTDatastoreManager alloc] initWithDirectory:path
+                                             error:&outError];
+    
+    // Create and start the replicator -- -start is essential!
+    CDTReplicatorFactory *replicatorFactory =
+    [[CDTReplicatorFactory alloc] initWithDatastoreManager:manager];
+    
+    // username/password can be Cloudant API keys
+    NSString *s = @"https://8cb6b468-63b2-4a70-801f-b78d55af8f12-bluemix:e4b615379ba895f28858309b3da32b88d727b00c2dab059813be8abdb87311a2@8cb6b468-63b2-4a70-801f-b78d55af8f12-bluemix.cloudant.com/anton";
+    NSURL *remoteDatabaseURL = [NSURL URLWithString:s];
+    CDTDatastore *datastore = [manager datastoreNamed:@"teststore" error:&error];
+    
+    // Create a replicator that replicates changes from the local
+    // datastore to the remote database.
+    CDTPushReplication *pushReplication = [CDTPushReplication replicationWithSource:datastore
+                                                                             target:remoteDatabaseURL];
+    
+    CDTReplicator *replicator = [replicatorFactory oneWay:pushReplication error:&error];
+    
+
+    CDTDocumentRevision *rev = [CDTDocumentRevision revisionWithDocId:@"test8"];
+    // Use [CDTDocumentRevision revision] to get an ID generated for you on saving
+    rev.body = [@{
+                  @"description": @"Buy milk",
+                  @"completed": @NO,
+                  @"type": @"com.cloudant.sync.example.task"
+                  } mutableCopy];
+    
+    
+    
+    
+    // Save the document to the database
+    CDTDocumentRevision *revision = [datastore createDocumentFromRevision:rev
+                                                                    error:&error];
+    
+    // Start the replication
+    if (![replicator startWithError:&error]){
+        //handle error
+        
+        NSLog(@"replicator messed up");
+
+    } else {
+        //wait for it to complete
+        while (replicator.isActive) {
+            [NSThread sleepForTimeInterval:1.0f];
+            NSLog(@" -> %@", [CDTReplicator stringForReplicatorState:replicator.state]);
+        }
+    }
     
 
     
+    CDTDocumentRevision *rev2 = [CDTDocumentRevision revisionWithDocId:@"test9"];
+    // Use [CDTDocumentRevision revision] to get an ID generated for you on saving
+    rev2.body = [@{
+                  @"description": @"Buy milk",
+                  @"completed": @NO,
+                  @"type": @"com.cloudant.sync.example.task"
+                  } mutableCopy];
+
+    
+    [datastore createDocumentFromRevision:rev2
+                                    error:&error];
     
     
     // Override point for customization after application launch.

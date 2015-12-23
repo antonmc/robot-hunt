@@ -91,6 +91,7 @@
 		22FFB7D71A87023000A495E8 /* robot-icon-76.png in Resources */ = {isa = PBXBuildFile; fileRef = 22FFB7D51A87023000A495E8 /* robot-icon-76.png */; };
 		22FFB7D91A87026F00A495E8 /* robot-icon-60.png in Resources */ = {isa = PBXBuildFile; fileRef = 22FFB7D81A87026F00A495E8 /* robot-icon-60.png */; };
 		22FFB7DB1A87036000A495E8 /* robot-icon-120.png in Resources */ = {isa = PBXBuildFile; fileRef = 22FFB7DA1A87036000A495E8 /* robot-icon-120.png */; };
+		883E104DA88CF7E255E0F4B6 /* libPods-robots.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 1FC36764AA42F8C28A7177D3 /* libPods-robots.a */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -117,6 +118,7 @@
 /* End PBXCopyFilesBuildPhase section */
 
 /* Begin PBXFileReference section */
+		1FC36764AA42F8C28A7177D3 /* libPods-robots.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-robots.a"; sourceTree = BUILT_PRODUCTS_DIR; };
 		220798061BB5B59900DC4806 /* watsonsdk.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = watsonsdk.framework; path = "../speech-ios-sdk/watsonsdk.framework"; sourceTree = "<group>"; };
 		220798081BB5B5B300DC4806 /* CFNetwork.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CFNetwork.framework; path = System/Library/Frameworks/CFNetwork.framework; sourceTree = SDKROOT; };
 		2207980A1BB5B61000DC4806 /* AVFoundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AVFoundation.framework; path = System/Library/Frameworks/AVFoundation.framework; sourceTree = SDKROOT; };
@@ -261,6 +263,8 @@
 		22FFB7D51A87023000A495E8 /* robot-icon-76.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "robot-icon-76.png"; sourceTree = "<group>"; };
 		22FFB7D81A87026F00A495E8 /* robot-icon-60.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "robot-icon-60.png"; sourceTree = "<group>"; };
 		22FFB7DA1A87036000A495E8 /* robot-icon-120.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "robot-icon-120.png"; sourceTree = "<group>"; };
+		4BA1DFBDBB53D2CF4FF196AC /* Pods-robots.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-robots.debug.xcconfig"; path = "Pods/Target Support Files/Pods-robots/Pods-robots.debug.xcconfig"; sourceTree = "<group>"; };
+		CD7CFB9AAC08774B6BD823EF /* Pods-robots.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-robots.release.xcconfig"; path = "Pods/Target Support Files/Pods-robots/Pods-robots.release.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -289,6 +293,7 @@
 				22B203451A57B20F00249E31 /* TwitterKit.framework in Frameworks */,
 				22DB36341C2639D3001F54B6 /* IBMBluemix.framework in Frameworks */,
 				22B203471A57B20F00249E31 /* Fabric.framework in Frameworks */,
+				883E104DA88CF7E255E0F4B6 /* libPods-robots.a in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -330,6 +335,7 @@
 				221C811E1A54C1D00000D6B6 /* robots */,
 				221C813B1A54C1D10000D6B6 /* robotsTests */,
 				221C811D1A54C1D00000D6B6 /* Products */,
+				BB10636794527A0A2CE939FE /* Pods */,
 			);
 			sourceTree = "<group>";
 		};
@@ -487,6 +493,7 @@
 				227196DE1A635F9900C9116E /* Foundation.framework */,
 				22B203421A57B20F00249E31 /* TwitterKit.framework */,
 				22B203441A57B20F00249E31 /* Fabric.framework */,
+				1FC36764AA42F8C28A7177D3 /* libPods-robots.a */,
 			);
 			name = Frameworks;
 			sourceTree = "<group>";
@@ -540,6 +547,15 @@
 			name = halo;
 			sourceTree = "<group>";
 		};
+		BB10636794527A0A2CE939FE /* Pods */ = {
+			isa = PBXGroup;
+			children = (
+				4BA1DFBDBB53D2CF4FF196AC /* Pods-robots.debug.xcconfig */,
+				CD7CFB9AAC08774B6BD823EF /* Pods-robots.release.xcconfig */,
+			);
+			name = Pods;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -547,11 +563,14 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = 221C81421A54C1D10000D6B6 /* Build configuration list for PBXNativeTarget "robots" */;
 			buildPhases = (
+				19370C6294E256659F397FC4 /* Check Pods Manifest.lock */,
 				221C81181A54C1D00000D6B6 /* Sources */,
 				221C81191A54C1D00000D6B6 /* Frameworks */,
 				221C811A1A54C1D00000D6B6 /* Resources */,
 				221C81481A55F1D70000D6B6 /* ShellScript */,
 				2207983C1BB7942A00DC4806 /* Embed App Extensions */,
+				0AA3D3BB012C74714B8AE737 /* Embed Pods Frameworks */,
+				DD9BBB80A1F656A2797FE24B /* Copy Pods Resources */,
 			);
 			buildRules = (
 			);
@@ -686,6 +705,36 @@
 /* End PBXResourcesBuildPhase section */
 
 /* Begin PBXShellScriptBuildPhase section */
+		0AA3D3BB012C74714B8AE737 /* Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "Embed Pods Frameworks";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-robots/Pods-robots-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		19370C6294E256659F397FC4 /* Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "Check Pods Manifest.lock";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_ROOT}/../Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [[ $? != 0 ]] ; then\n    cat << EOM\nerror: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\nEOM\n    exit 1\nfi\n";
+			showEnvVarsInLog = 0;
+		};
 		221C81481A55F1D70000D6B6 /* ShellScript */ = {
 			isa = PBXShellScriptBuildPhase;
 			buildActionMask = 12;
@@ -699,6 +748,21 @@
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
 			shellScript = "./Fabric.framework/run 3250f6a88b8a360aee8daa26c98be9465ae59290 fc6abcd338518bb529cc3cc640cd87a1013b2a0dd8a143156b4bdbf9d4484ac8";
+		};
+		DD9BBB80A1F656A2797FE24B /* Copy Pods Resources */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "Copy Pods Resources";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-robots/Pods-robots-resources.sh\"\n";
+			showEnvVarsInLog = 0;
 		};
 /* End PBXShellScriptBuildPhase section */
 
@@ -853,6 +917,7 @@
 		};
 		221C81431A54C1D10000D6B6 /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 4BA1DFBDBB53D2CF4FF196AC /* Pods-robots.debug.xcconfig */;
 			buildSettings = {
 				ALWAYS_SEARCH_USER_PATHS = NO;
 				ASSETCATALOG_COMPILER_APPICON_NAME = "AppIcon-2";
@@ -881,10 +946,6 @@
 					"$(PROJECT_DIR)",
 					"/Users/antonm/Desktop/code/iOS-SDK/EstimoteSDK",
 				);
-				OTHER_LDFLAGS = (
-					"-lsqlite3",
-					"-ObjC",
-				);
 				PRODUCT_BUNDLE_IDENTIFIER = "org.ibm.com.$(PRODUCT_NAME:rfc1034identifier)";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				PROVISIONING_PROFILE = "";
@@ -896,6 +957,7 @@
 		};
 		221C81441A54C1D10000D6B6 /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = CD7CFB9AAC08774B6BD823EF /* Pods-robots.release.xcconfig */;
 			buildSettings = {
 				ALWAYS_SEARCH_USER_PATHS = NO;
 				ASSETCATALOG_COMPILER_APPICON_NAME = "AppIcon-2";
@@ -921,6 +983,10 @@
 					"/Users/antonm/Desktop/code/speech-ios-sdk",
 				);
 				HEADER_SEARCH_PATHS = "\"$(SRCROOT)/../EstimoteSDK/Headers\"";
+				"HEADER_SEARCH_PATHS[arch=*]" = (
+					"\"$(SRCROOT)/../EstimoteSDK/Headers\"",
+					"$(inherited)",
+				);
 				INFOPLIST_FILE = robots/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 9.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
@@ -929,10 +995,6 @@
 					"$(PROJECT_DIR)/EstimoteSDK",
 					"$(PROJECT_DIR)",
 					"/Users/antonm/Desktop/code/iOS-SDK/EstimoteSDK",
-				);
-				OTHER_LDFLAGS = (
-					"-lsqlite3",
-					"-ObjC",
 				);
 				PRODUCT_BUNDLE_IDENTIFIER = "org.ibm.com.$(PRODUCT_NAME:rfc1034identifier)";
 				PRODUCT_NAME = "$(TARGET_NAME)";

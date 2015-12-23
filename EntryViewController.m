@@ -15,6 +15,9 @@
 #import "Player.h"
 #import "Robot.h"
 
+#import <CloudantSync.h>
+
+
 @import HealthKit;
 
 @interface EntryViewController ()
@@ -36,6 +39,8 @@ NSArray *help;
     [super viewDidLoad];
     
    
+   
+    
     
     [ logInButton setHidden: TRUE ];
     
