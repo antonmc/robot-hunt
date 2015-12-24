@@ -39,6 +39,7 @@
 @synthesize managedObjectModel = _managedObjectModel;
 @synthesize persistentStoreCoordinator = _persistentStoreCoordinator;
 
+
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions {
     // Override point for customization after application launch.
     
@@ -81,84 +82,93 @@
         
     }
     
-    NSError *outError = nil;
-    NSFileManager *fileManager= [NSFileManager defaultManager];
+    [self fetchRobotData];
+    [self fetchConfigData];
     
-    NSURL *documentsDir = [[fileManager URLsForDirectory:NSDocumentDirectory
-                                               inDomains:NSUserDomainMask] lastObject];
-    NSURL *storeURL = [documentsDir URLByAppendingPathComponent:@"test"];
+//    NSError *outError = nil;
+//    NSFileManager *fileManager= [NSFileManager defaultManager];
+//    
+//    NSURL *documentsDir = [[fileManager URLsForDirectory:NSDocumentDirectory
+//                                               inDomains:NSUserDomainMask] lastObject];
+//    NSURL *storeURL = [documentsDir URLByAppendingPathComponent:@"test"];
+//    
+//    
+//    NSString *path = [storeURL path];
     
-    
-    NSString *path = [storeURL path];
-    
-    NSError *error = nil;
+//    NSError *error = nil;
 
     
     // 7580d36a4fa13981ea4ae1b630a6e7472265c424s
     
-    CDTDatastoreManager *manager =
-    [[CDTDatastoreManager alloc] initWithDirectory:path
-                                             error:&outError];
+//    CDTDatastoreManager *manager =
+//    [[CDTDatastoreManager alloc] initWithDirectory:path
+//                                             error:&outError];
+//    
+//    // Create and start the replicator -- -start is essential!
+//    CDTReplicatorFactory *replicatorFactory =
+//    [[CDTReplicatorFactory alloc] initWithDatastoreManager:manager];
+//
+//    
+//    // username/password can be Cloudant API keys
+//    NSString *s = @"https://4841eac0-b5d4-4bc9-a43f-0ceffeadf7fe-bluemix:0be35a7c3521778c17d43fae4f5019753004c7858ff327fbbf7d704224528770@4841eac0-b5d4-4bc9-a43f-0ceffeadf7fe-bluemix.cloudant.com/anton";
+//    NSURL *remoteDatabaseURL = [NSURL URLWithString:s];
+//    CDTDatastore *datastore = [manager datastoreNamed:@"teststore" error:&error];
+//    
+//    // Create a replicator that replicates changes from the local
+//    // datastore to the remote database.
+//    CDTPushReplication *pushReplication = [CDTPushReplication replicationWithSource:datastore
+//                                                                             target:remoteDatabaseURL];
+//    
+//    CDTReplicator *replicator = [replicatorFactory oneWay:pushReplication error:&error];
+//    
+//
+//    CDTDocumentRevision *rev = [CDTDocumentRevision revisionWithDocId:@"test8"];
+//    // Use [CDTDocumentRevision revision] to get an ID generated for you on saving
+//    rev.body = [@{
+//                  @"description": @"Buy milk",
+//                  @"completed": @NO,
+//                  @"type": @"com.cloudant.sync.example.task"
+//                  } mutableCopy];
+//    
+//    
+//    
+//    
+//    // Save the document to the database
+//    CDTDocumentRevision *revision = [datastore createDocumentFromRevision:rev
+//                                                                    error:&error];
+//    
+//    // Start the replication
+//    if (![replicator startWithError:&error]){
+//        //handle error
+//        
+//        NSLog(@"replicator messed up");
+//
+//    } else {
+//        //wait for it to complete
+//        while (replicator.isActive) {
+//            [NSThread sleepForTimeInterval:1.0f];
+//            NSLog(@" -> %@", [CDTReplicator stringForReplicatorState:replicator.state]);
+//        }
+//    }
     
-    // Create and start the replicator -- -start is essential!
-    CDTReplicatorFactory *replicatorFactory =
-    [[CDTReplicatorFactory alloc] initWithDatastoreManager:manager];
-    
-    // username/password can be Cloudant API keys
-    NSString *s = @"https://8cb6b468-63b2-4a70-801f-b78d55af8f12-bluemix:e4b615379ba895f28858309b3da32b88d727b00c2dab059813be8abdb87311a2@8cb6b468-63b2-4a70-801f-b78d55af8f12-bluemix.cloudant.com/anton";
-    NSURL *remoteDatabaseURL = [NSURL URLWithString:s];
-    CDTDatastore *datastore = [manager datastoreNamed:@"teststore" error:&error];
-    
-    // Create a replicator that replicates changes from the local
-    // datastore to the remote database.
-    CDTPushReplication *pushReplication = [CDTPushReplication replicationWithSource:datastore
-                                                                             target:remoteDatabaseURL];
-    
-    CDTReplicator *replicator = [replicatorFactory oneWay:pushReplication error:&error];
-    
-
-    CDTDocumentRevision *rev = [CDTDocumentRevision revisionWithDocId:@"test8"];
-    // Use [CDTDocumentRevision revision] to get an ID generated for you on saving
-    rev.body = [@{
-                  @"description": @"Buy milk",
-                  @"completed": @NO,
-                  @"type": @"com.cloudant.sync.example.task"
-                  } mutableCopy];
     
     
-    
-    
-    // Save the document to the database
-    CDTDocumentRevision *revision = [datastore createDocumentFromRevision:rev
-                                                                    error:&error];
-    
-    // Start the replication
-    if (![replicator startWithError:&error]){
-        //handle error
-        
-        NSLog(@"replicator messed up");
-
-    } else {
-        //wait for it to complete
-        while (replicator.isActive) {
-            [NSThread sleepForTimeInterval:1.0f];
-            NSLog(@" -> %@", [CDTReplicator stringForReplicatorState:replicator.state]);
-        }
-    }
-    
-
-    
-    CDTDocumentRevision *rev2 = [CDTDocumentRevision revisionWithDocId:@"test9"];
-    // Use [CDTDocumentRevision revision] to get an ID generated for you on saving
-    rev2.body = [@{
-                  @"description": @"Buy milk",
-                  @"completed": @NO,
-                  @"type": @"com.cloudant.sync.example.task"
-                  } mutableCopy];
-
-    
-    [datastore createDocumentFromRevision:rev2
-                                    error:&error];
+ 
+  
+//    
+//
+//    
+//    CDTDocumentRevision *rev2 = [CDTDocumentRevision revisionWithDocId:@"test9"];
+//    // Use [CDTDocumentRevision revision] to get an ID generated for you on saving
+//    rev2.body = [@{
+//                  @"description": @"Buy milk",
+//                  @"completed": @NO,
+//                  @"type": @"com.cloudant.sync.example.task"
+//                  } mutableCopy];
+//
+//    
+//    [datastore createDocumentFromRevision:rev2
+//                                    error:&error];
     
     
     // Override point for customization after application launch.
@@ -188,69 +198,178 @@
     
     
     [IBMData initializeService];
-    
+//
     IBMQuery *qry = [RobotRemote query];
-    
-    [[qry find] continueWithBlock:^id(BFTask *task) {
-        if(task.error) {
-            NSLog(@"listItems failed with error: %@", task.error);
-        } else {
-            
-            NSMutableArray* robotList = [NSMutableArray arrayWithArray: task.result];
-            
-            for( RobotRemote* remoteRobot in robotList ){
-                
-                NSLog(@"Name: %@", remoteRobot.name);
-                
-                
-                Robot *newRobot = [NSEntityDescription insertNewObjectForEntityForName:@"Robot"
-                                                                          inManagedObjectContext:self.managedObjectContext];
-                
-                newRobot.name = remoteRobot.name;
-                newRobot.about = remoteRobot.description;
-                newRobot.mugshot = remoteRobot.mugshotBase64;
-                newRobot.fullshot = remoteRobot.fullBase64;
-                newRobot.iBeacon = remoteRobot.beacon;
-                newRobot.primaryColor = remoteRobot.primaryColor;
-                newRobot.secondaryColor = remoteRobot.secondaryColor;
-                
-                NSNumberFormatter *f = [[NSNumberFormatter alloc] init];
-                f.numberStyle = NSNumberFormatterDecimalStyle;
-                
-                newRobot.disruption = [ f numberFromString: remoteRobot.disruption  ];
-            }
-        }
-    
-        return nil;
-    }];
-    
-    
-    
-    
-    qry = [ConfigData query];
-    
-    [[qry find] continueWithBlock:^id(BFTask *task) {
-        if(task.error) {
-            NSLog(@"listItems failed with error: %@", task.error);
-        } else {
-            
-            NSMutableArray* configList = [NSMutableArray arrayWithArray: task.result];
-            
-            for( ConfigData* configItem in configList ){
-                
-                NSLog( @"Disruption Range: %@", configItem.disruptionRange );
-                
-                self.config = configItem;
-                
-            }
-        }
-        
-        return nil;
-    }];
-
     
     return YES;
 }
+
+- (void)fetchRobotData{
+    
+    
+    NSError *outError = nil;
+    NSFileManager *fileManager= [NSFileManager defaultManager];
+    
+    NSURL *documentsDir = [[fileManager URLsForDirectory:NSDocumentDirectory
+                                               inDomains:NSUserDomainMask] lastObject];
+
+    NSError *error = nil;
+
+    
+    NSURL *robotStoreURL = [documentsDir URLByAppendingPathComponent:@"robot"];
+    
+    NSString *robotPath = [robotStoreURL path];
+    
+    CDTDatastoreManager *robotManager =
+    [[CDTDatastoreManager alloc] initWithDirectory:robotPath
+                                             error:&outError];
+    // Create and start the replicator -- -start is essential!
+    CDTReplicatorFactory *robotReplicatorFactory =
+    [[CDTReplicatorFactory alloc] initWithDatastoreManager:robotManager];
+    
+    
+    CDTDatastore *robotData = [robotManager datastoreNamed:@"robots" error:&error];
+    
+    NSString *remoteRobots =@"https://9c045adc-430a-4c0c-8a27-c2bed11edbe4-bluemix:14488590b7b0cada494bacc613f948c6ece6b5e717c4992317b76712dffdcfa9@9c045adc-430a-4c0c-8a27-c2bed11edbe4-bluemix.cloudant.com/robots";
+    NSURL *remoteRobotsURL = [NSURL URLWithString:remoteRobots];
+    
+    CDTPullReplication *pullReplication = [CDTPullReplication replicationWithSource:remoteRobotsURL
+                                                                             target:robotData];
+    CDTReplicator *robotReplicator = [robotReplicatorFactory oneWay:pullReplication error:&error];
+    
+    // Check replicator isn't nil, if so check error
+    
+    // Start the replication
+    if ([robotReplicator startWithError:&error]){
+        //handle error
+        
+        while (robotReplicator.isActive) {
+            [NSThread sleepForTimeInterval:1.0f];
+            NSLog(@" -> %@", [CDTReplicator stringForReplicatorState:robotReplicator.state]);
+        }
+        
+        
+        NSLog(@"robot replicator succeeded");
+        
+    } else {
+        //wait for it to complete
+        while (robotReplicator.isActive) {
+            [NSThread sleepForTimeInterval:1.0f];
+            NSLog(@" -> %@", [CDTReplicator stringForReplicatorState:robotReplicator.state]);
+        }
+    }
+    
+    NSDictionary *query = @{
+                            @"name": @"robothunt"                        };
+    CDTQResultSet *result = [robotData find:query];
+    [result enumerateObjectsUsingBlock:^(CDTDocumentRevision *rev, NSUInteger idx, BOOL *stop) {
+        
+        NSMutableDictionary *robotData = rev.body;
+        
+        NSMutableArray *bots = [robotData objectForKey:@"bots"];
+        
+        for( NSMutableDictionary* bot in bots ){
+            
+            NSString* name = [bot objectForKey:@"name"];
+            
+            NSLog(@"Robot Name: %@", name);
+            
+            Robot *newRobot = [NSEntityDescription insertNewObjectForEntityForName:@"Robot"
+                                                            inManagedObjectContext:self.managedObjectContext];
+            
+            newRobot.name = [bot objectForKey:@"name"];
+            newRobot.about = [bot objectForKey:@"description"];
+            newRobot.mugshot = [bot objectForKey:@"mugshotBase64"];
+            newRobot.fullshot = [bot objectForKey:@"fullBase64"];
+            newRobot.iBeacon = [bot objectForKey:@"beacon"];
+            newRobot.primaryColor = [bot objectForKey:@"primaryColor"];
+            newRobot.secondaryColor = [bot objectForKey:@"secondaryColor"];
+            
+            NSNumberFormatter *f = [[NSNumberFormatter alloc] init];
+            f.numberStyle = NSNumberFormatterDecimalStyle;
+            
+            newRobot.disruption = [ f numberFromString: [bot objectForKey:@"disruption"]  ];
+        }
+        
+        NSLog(@"size: %lu", (unsigned long)bots.count);
+    }];
+
+}
+
+
+- (void)fetchConfigData{
+    
+    
+    NSError *outError = nil;
+    NSFileManager *fileManager= [NSFileManager defaultManager];
+    
+    NSURL *documentsDir = [[fileManager URLsForDirectory:NSDocumentDirectory
+                                               inDomains:NSUserDomainMask] lastObject];
+    
+    NSError *error = nil;
+    
+    
+    NSURL *configStoreURL = [documentsDir URLByAppendingPathComponent:@"config"];
+    
+    NSString *configPath = [configStoreURL path];
+    
+    CDTDatastoreManager *configManager =
+    [[CDTDatastoreManager alloc] initWithDirectory:configPath
+                                             error:&outError];
+    // Create and start the replicator -- -start is essential!
+    CDTReplicatorFactory *configReplicatorFactory =
+    [[CDTReplicatorFactory alloc] initWithDatastoreManager:configManager];
+    
+    
+    CDTDatastore *configData = [configManager datastoreNamed:@"config" error:&error];
+    
+    NSString *remoteConfig =@"https://9c045adc-430a-4c0c-8a27-c2bed11edbe4-bluemix:14488590b7b0cada494bacc613f948c6ece6b5e717c4992317b76712dffdcfa9@9c045adc-430a-4c0c-8a27-c2bed11edbe4-bluemix.cloudant.com/config";
+    NSURL *remoteURL = [NSURL URLWithString:remoteConfig];
+    
+    CDTPullReplication *pullReplication = [CDTPullReplication replicationWithSource:remoteURL
+                                                                             target:configData];
+    CDTReplicator *replicator = [configReplicatorFactory oneWay:pullReplication error:&error];
+    
+    // Check replicator isn't nil, if so check error
+    
+    // Start the replication
+    if ([replicator startWithError:&error]){
+        //handle error
+        
+        while (replicator.isActive) {
+            [NSThread sleepForTimeInterval:1.0f];
+            NSLog(@" -> %@", [CDTReplicator stringForReplicatorState:replicator.state]);
+        }
+        
+        
+        NSLog(@"config replicator succeeded");
+        
+    }
+    
+    NSDictionary *query = @{
+                            @"name": @"config"                        };
+    CDTQResultSet *result = [configData find:query];
+    [result enumerateObjectsUsingBlock:^(CDTDocumentRevision *rev, NSUInteger idx, BOOL *stop) {
+        
+        NSMutableDictionary *confData = rev.body;
+        
+        NSMutableArray *config = [confData objectForKey:@"config"];
+        
+        for( NSMutableDictionary* conf in config ){
+            
+            NSString* range = [conf objectForKey:@"disruptionRange"];
+            
+            self.config.disruptionRange = [conf objectForKey:@"disruptionRange"];
+            self.config.disruptionTime = [conf objectForKey:@"disruptionTime"];
+            self.config.scannerWidth = [conf objectForKey:@"scannerWidth"];
+            
+        }
+        
+        NSLog(@"size: %lu", (unsigned long)config.count);
+    }];
+    
+}
+
 
 - (NSPredicate *)predicateForSamplesToday {
     NSCalendar *calendar = [NSCalendar currentCalendar];
@@ -454,10 +573,6 @@
     }];
      
 }
-
-
-
-
 
 
 #pragma mark - Application's Documents directory
