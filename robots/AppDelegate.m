@@ -230,7 +230,7 @@
     
     CDTDatastore *robotData = [robotManager datastoreNamed:@"robots" error:&error];
     
-    NSString *remoteRobots =@"https://9c045adc-430a-4c0c-8a27-c2bed11edbe4-bluemix:14488590b7b0cada494bacc613f948c6ece6b5e717c4992317b76712dffdcfa9@9c045adc-430a-4c0c-8a27-c2bed11edbe4-bluemix.cloudant.com/robots";
+    NSString *remoteRobots =@"https://b7f324fb-f822-442d-8ea0-3bdba66c1934-bluemix:84ddf2db1317b0318c6e6b5c9029749c490db06274b581a153f7627fca68a1bd@b7f324fb-f822-442d-8ea0-3bdba66c1934-bluemix.cloudant.com/robots";
     NSURL *remoteRobotsURL = [NSURL URLWithString:remoteRobots];
     
     CDTPullReplication *pullReplication = [CDTPullReplication replicationWithSource:remoteRobotsURL
@@ -323,7 +323,7 @@
     
     CDTDatastore *configData = [configManager datastoreNamed:@"config" error:&error];
     
-    NSString *remoteConfig =@"https://9c045adc-430a-4c0c-8a27-c2bed11edbe4-bluemix:14488590b7b0cada494bacc613f948c6ece6b5e717c4992317b76712dffdcfa9@9c045adc-430a-4c0c-8a27-c2bed11edbe4-bluemix.cloudant.com/config";
+    NSString *remoteConfig =@"https://b7f324fb-f822-442d-8ea0-3bdba66c1934-bluemix:84ddf2db1317b0318c6e6b5c9029749c490db06274b581a153f7627fca68a1bd@b7f324fb-f822-442d-8ea0-3bdba66c1934-bluemix.cloudant.com/config";
     NSURL *remoteURL = [NSURL URLWithString:remoteConfig];
     
     CDTPullReplication *pullReplication = [CDTPullReplication replicationWithSource:remoteURL

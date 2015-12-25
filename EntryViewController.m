@@ -38,9 +38,7 @@ NSArray *help;
 {
     [super viewDidLoad];
     
-   
-   
-    
+    [self fetchHelpData];
     
     [ logInButton setHidden: TRUE ];
     
@@ -53,37 +51,191 @@ NSArray *help;
     
     self.tts = [TextToSpeech initWithConfig:conf];
     
-    IBMQuery *qry = [RemoteHelp query];
     
-    [[qry find] continueWithBlock:^id(BFTask *task) {
-        if(task.error) {
-            NSLog(@"listItems failed with error: %@", task.error);
+    
+    RobotLoginButton* newlogInButton =  [RobotLoginButton buttonWithLogInCompletion: ^(TWTRSession* session, NSError* error) {
+                                                    
+        if (session) {
+                                                        
+            NSLog(@"signed in as %@", [session userName]);
+                                                        
+            [self findPlayer:[session userName]];
+        }
+        
+   
+    }];
+    
+    logInButton.logInCompletion = newlogInButton.logInCompletion;
+    
+    [ logInButton setHidden: FALSE ];
+
+    
+}
+
+- (Player*) findPlayer:(NSString*)person{
+    
+    Player *player;
+    
+    
+    NSError *outError = nil;
+    
+    NSFileManager *fileManager= [NSFileManager defaultManager];
+    
+    NSURL *documentsDir = [[fileManager URLsForDirectory:NSDocumentDirectory
+                                                   inDomains:NSUserDomainMask] lastObject];
+    NSURL *storeURL = [documentsDir URLByAppendingPathComponent:@"player"];
+    
+    NSString *path = [storeURL path];
+    
+    NSError *error = nil;
+    
+    CDTDatastoreManager *manager =
+    [[CDTDatastoreManager alloc] initWithDirectory:path error:&outError];
+    
+    // Create and start the replicator -- -start is essential!
+    CDTReplicatorFactory *replicatorFactory = [[CDTReplicatorFactory alloc] initWithDatastoreManager:manager];
+    
+    // username/password can be Cloudant API keys
+    NSString *s = @"https://b7f324fb-f822-442d-8ea0-3bdba66c1934-bluemix:84ddf2db1317b0318c6e6b5c9029749c490db06274b581a153f7627fca68a1bd@b7f324fb-f822-442d-8ea0-3bdba66c1934-bluemix.cloudant.com/player";
+    NSURL *remoteDatabaseURL = [NSURL URLWithString:s];
+    CDTDatastore *datastore = [manager datastoreNamed:@"player" error:&error];
+    
+    NSDictionary *query = @{ @"name": @"person" };
+    CDTQResultSet *result = [datastore find:query];
+    
+    if( result.documentIds.count > 0 ){
+    
+        [result enumerateObjectsUsingBlock:^(CDTDocumentRevision *rev, NSUInteger idx, BOOL *stop) {
+        
+            NSMutableDictionary *personData = rev.body;
+            
+            appDelegate.player = rev.body;
+            
+            [self performSegueWithIdentifier:@"scanSegue" sender:self];
+        
+        }];
+        
+    }else{
+        
+        
+        Player* newPlayer = [[Player alloc] init];
+        
+        newPlayer.name = @"person";
+        newPlayer.robots = [self createNewScoreTemplate];
+        newPlayer.startTime = [NSDate date];
+
+        
+        CDTDocumentRevision *rev = [CDTDocumentRevision revision];
+        rev.body = [@{ @"name": newPlayer.name,
+                          @"robots": newPlayer.robots
+                          } mutableCopy];
+        
+        // Save the document to the database
+        CDTDocumentRevision *revision = [datastore createDocumentFromRevision:rev error:&error];
+        
+        CDTPushReplication *pushReplication = [CDTPushReplication replicationWithSource:datastore target:remoteDatabaseURL];
+        
+        CDTReplicator *replicator = [replicatorFactory oneWay:pushReplication error:&error];
+        
+        // Start the replication
+        if (![replicator startWithError:&error]){
+                //handle error
+        
+                NSLog(@"replicator messed up");
+        
         } else {
+                //wait for it to complete
+                while (replicator.isActive) {
+                    [NSThread sleepForTimeInterval:1.0f];
+                    NSLog(@" -> %@", [CDTReplicator stringForReplicatorState:replicator.state]);
+                }
+            
+             [self performSegueWithIdentifier:@"scanSegue" sender:self];
+        }
+    }
+
+    return player;
+}
+
+
+- (void)fetchHelpData{
+    
+    
+    NSError *outError = nil;
+    NSFileManager *fileManager= [NSFileManager defaultManager];
+    
+    NSURL *documentsDir = [[fileManager URLsForDirectory:NSDocumentDirectory
+                                               inDomains:NSUserDomainMask] lastObject];
+    
+    NSError *error = nil;
+    
+    
+    NSURL *url = [documentsDir URLByAppendingPathComponent:@"help"];
+    
+    NSString *path = [url path];
+    
+    CDTDatastoreManager *configManager =
+    [[CDTDatastoreManager alloc] initWithDirectory:path
+                                             error:&outError];
+    
+    // Create and start the replicator -- -start is essential!
+    CDTReplicatorFactory *replicatorFactory =
+    [[CDTReplicatorFactory alloc] initWithDatastoreManager:configManager];
+    
+    
+    CDTDatastore *helpData = [configManager datastoreNamed:@"help" error:&error];
+    
+    NSString *remoteHelp =@"https://b7f324fb-f822-442d-8ea0-3bdba66c1934-bluemix:84ddf2db1317b0318c6e6b5c9029749c490db06274b581a153f7627fca68a1bd@b7f324fb-f822-442d-8ea0-3bdba66c1934-bluemix.cloudant.com/help";
+    NSURL *remoteURL = [NSURL URLWithString:remoteHelp];
+    
+    CDTPullReplication *pullReplication = [CDTPullReplication replicationWithSource:remoteURL
+                                                                             target:helpData];
+    CDTReplicator *replicator = [replicatorFactory oneWay:pullReplication error:&error];
+    
+    // Check replicator isn't nil, if so check error
+    
+    // Start the replication
+    if ([replicator startWithError:&error]){
+        //handle error
+        
+        while (replicator.isActive) {
+            [NSThread sleepForTimeInterval:1.0f];
+            NSLog(@" -> %@", [CDTReplicator stringForReplicatorState:replicator.state]);
+        }
+        
+        
+        NSLog(@"config replicator succeeded");
+        
+    }
+    
+    NSDictionary *query = @{
+                            @"name": @"help"                        };
+    CDTQResultSet *result = [helpData find:query];
+    [result enumerateObjectsUsingBlock:^(CDTDocumentRevision *rev, NSUInteger idx, BOOL *stop) {
+        
+        NSMutableDictionary *confData = rev.body;
+        
+        NSMutableArray *helpArray = [confData objectForKey:@"help"];
+        
+        for( NSMutableDictionary* h in helpArray ){
             
             appDelegate = [UIApplication sharedApplication].delegate;
-
             
-            NSMutableArray* helpList = [NSMutableArray arrayWithArray: task.result];
-            
-            for( RemoteHelp* help in helpList ){
-                
-                NSLog(@"Title: %@", help.title);
-                
                 NSNumberFormatter *formatter = [[NSNumberFormatter alloc] init];
                 formatter.numberStyle = NSNumberFormatterDecimalStyle;
-               
+                
                 
                 Help *newHelp = [NSEntityDescription insertNewObjectForEntityForName:@"Help" inManagedObjectContext:appDelegate.managedObjectContext];
                 
-                newHelp.title = help.title;
-                newHelp.image = help.image;
-                newHelp.subtitle = help.subtext;
-                newHelp.screen = [ formatter numberFromString:help.screen  ];
-                newHelp.size = help.size;
-                newHelp.weight = help.weight;
-                newHelp.justification = help.justification;
-                newHelp.color = help.color;
-            }
+                newHelp.title = [h objectForKey:@"title"];
+                newHelp.image = [h objectForKey:@"image"];
+                newHelp.subtitle = [h objectForKey:@"subtext"];
+                newHelp.screen = [ formatter numberFromString:[h objectForKey:@"screen"]  ];
+                newHelp.size = [h objectForKey:@"size"];
+                newHelp.weight = [h objectForKey:@"weight"];
+                newHelp.justification = [h objectForKey:@"justification"];
+                newHelp.color = [h objectForKey:@"color"];
+        }
             
             NSArray* unsorted = [appDelegate getHelp];
             
@@ -106,137 +258,9 @@ NSArray *help;
             [self.pageViewController didMoveToParentViewController:self];
             
             self.pageViewController.view.frame = CGRectMake(0, 0, self.view.frame.size.width, self.view.frame.size.height-100);
-
-            
-            RobotLoginButton* newlogInButton =  [RobotLoginButton
-                                                buttonWithLogInCompletion:
-                                                ^(TWTRSession* session, NSError* error) {
-                                                    
-                                                    if (session) {
-                                                        
-                                                        NSLog(@"signed in as %@", [session userName]);
-                                                        
-                                                        IBMQuery *qry = [Player query];
-                                                        
-                                                        [[qry find] continueWithBlock:^id(BFTask *task) {
-                                                            if(task.error) {
-                                                                NSLog(@"listItems failed with error: %@", task.error);
-                                                            } else {
-                                                                
-                                                                BOOL playerFound = false;
-                                                                
-                                                                NSMutableArray* playerList = [NSMutableArray arrayWithArray: task.result];
-                                                                
-                                                                for( Player* player in playerList ){
-                                                                    
-                                                                    NSArray* r = player.robots;
-                                                                    
-                                                                    for( int rcount = 0; rcount < r.count; rcount++ ){
-                                                                        NSMutableDictionary* item = [ r objectAtIndex:rcount ];
-                                                                    }
-                                                                    
-                                                                    
-                                                                    if( [ player.name isEqualToString: [ session userName ] ]){
-                                                                        
-                                                                        /* Player has played before - so we don't need to make a new
-                                                                         accound for them */
-                                                                        
-                                                                        NSLog( @"PLAYER FOUND" );
-                                                                        
-                                                                        playerFound = true;
-                                                                        
-                                                                        NSString *welcome = @"Welcome back, ";
-                                                                        
-                                                                        if( player.fullname != nil ){
-                                                                            welcome = [welcome stringByAppendingString:player.fullname];
-                                                                        }
-                                                                        
-                                                                        [self speak:welcome];
-                                                                        
-                                                                        [self performSegueWithIdentifier:@"scanSegue" sender:self];
-                                                                        
-                                                                        appDelegate.player = player;
-                                                                        
-                                                                        break;
-                                                                    }
-                                                                }
-                                                                
-                                                                if( playerFound == false ){
-                                                                    
-                                                                    Player* newPlayer = [[Player alloc] init];
-                                                                    
-                                                                    newPlayer.name = [ session userName ];
-                                                                    newPlayer.robots = [self createNewScoreTemplate];
-                                                                    newPlayer.startTime = [NSDate date];
-                                                                    
-                                                                    /* Build personality data from Twitter profile */
-                                                                    
-                                                                    NSString *path = @"https://robot.mybluemix.net/personality?id=";
-                                                                    
-                                                                    path = [path stringByAppendingString:[session userName]];
-                                                                    
-                                                                    NSString *restUrl = [NSString stringWithFormat:path];
-                                                                    
-                                                                    NSURL *url = [NSURL URLWithString:restUrl];
-                                                                    
-                                                                    NSURLRequest *request = [NSURLRequest requestWithURL:url];
-                                                                    
-                                                                    [NSURLConnection sendAsynchronousRequest:request queue:[NSOperationQueue mainQueue] completionHandler:^(NSURLResponse *response, NSData *data, NSError *connectionError) {
-                                                                        if (data.length > 0 && connectionError == nil) {
-                                                                            NSMutableDictionary *elements = [NSJSONSerialization JSONObjectWithData:data options:0 error:NULL];
-                                                                            
-                                                                            NSMutableDictionary *person = elements[@"person"];
-                                                                            newPlayer.description = person[@"description"];
-                                                                            newPlayer.location = person[@"location"];
-                                                                            newPlayer.fullname = person[@"name"];
-                                                                            newPlayer.zone = person[@"timezone"];
-                                                                            newPlayer.lat = person[@"lat"];
-                                                                            newPlayer.lng = person[@"lng"];
-                                                                            newPlayer.traits = elements[@"profiles"];
-                                                                        
-                                                                            NSString *welcome = @"Welcome to Robot Hunt, ";
-                                                                            
-                                                                            welcome = [welcome stringByAppendingString:newPlayer.fullname];
-                                                                                
-                                                                                 newPlayer.startSteps = 0;
-                                                                                
-                                                                                [[newPlayer save] continueWithBlock:^id(BFTask *task) {
-                                                                                    if(task.error) {
-                                                                                        NSLog(@"createItem failed with error: %@", task.error);
-                                                                                    }
-                                                                                    
-                                                                                    appDelegate.player = newPlayer;
-                                                                                    
-                                                                                    [self speak:welcome];
-                                                                                    
-                                                                                    [self performSegueWithIdentifier:@"scanSegue" sender:self];
-                                                                                    
-                                                                                    return nil;
-                                                                                }];
-
-                                                                            
-                                                                                                                                                    }
-                                                                    }];
-                                                                }
-                                                            }
-                                                            return nil;
-                                                            
-                                                        }];
-                                                        
-                                                    } else {
-                                                        NSLog(@"error: %@", [error localizedDescription]);
-                                                    }
-                                                }];
-            
-            logInButton.logInCompletion = newlogInButton.logInCompletion;
-            
-            [ logInButton setHidden: FALSE ];
-            
-        }
-        
-        return nil;
     }];
 }
+
 
 - (UIImage *) imageFromColor:(UIColor *)color {
     CGRect rect = CGRectMake(0, 0, 1000, 1000);
